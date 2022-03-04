@@ -38,9 +38,7 @@ $(".validate-form").on("submit", function (e) {
       contentType: false,
       cache: false,
       success: function (response) {
-        console.log(response);
         const { loginObj } = JSON.parse(response);
-        console.log(loginObj[0]);
         if (loginObj[0].status == "true") {
           if (loginObj[0].role == 0) {
             window.location.href = "main.php";
@@ -56,9 +54,7 @@ $(".validate-form").on("submit", function (e) {
             icon: "error",
             theme: "light",
             useTransparency: true,
-            onOk: function () {
-              $(".input100")[0].reset();
-            },
+            onOk: function () {},
           });
         }
       },

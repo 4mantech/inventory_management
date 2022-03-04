@@ -13,18 +13,23 @@ if(!empty($_POST)){
 
   if($result_user->num_rows == 1 ){
     session_start();
-
     $row_user = mysqli_fetch_array($result_user,MYSQLI_ASSOC);
-    setcookie("loginId", $row_user['id'], time() +(60*60*24*7), '/');
+    if(isset($_POST['remember'])){
+      setcookie("loginId", $row_user['id'], time() +(60*60*24*7), '/');
+    }
     $_SESSION['loginId'] = $row_user['id'];
     if($row_user['role']== 0){
-      setcookie("role", $row_user['role'], time() +(60*60*24*7), '/');
+      if(isset($_POST['remember'])){
+        setcookie("role", $row_user['role'], time() +(60*60*24*7), '/');
+      }
       $_SESSION["role"] = 0;
-     $resultLogin['loginObj'][] = array("status"=>"true","role"=>$row_user['role']);
-     print json_encode($resultLogin,JSON_UNESCAPED_UNICODE);
+      $resultLogin['loginObj'][] = array("status"=>"true","role"=>$row_user['role']);
+      print json_encode($resultLogin,JSON_UNESCAPED_UNICODE);
     }
     if($row_user['role']== 1){
-      setcookie("role", $row_user['role'], time() +(60*60*24*7), '/');
+      if(isset($_POST['remember'])){
+        setcookie("role", $row_user['role'], time() +(60*60*24*7), '/');
+      }
       $_SESSION["role"] = 1;
       $resultLogin['loginObj'][] = array("status"=>"true","role"=>$row_user['role']);
       print json_encode($resultLogin,JSON_UNESCAPED_UNICODE);    
