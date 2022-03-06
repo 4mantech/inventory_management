@@ -18,6 +18,7 @@ if(!empty($_POST)){
       setcookie("loginId", $row_user['id'], time() +(60*60*24*7), '/');
     }
     $_SESSION['loginId'] = $row_user['id'];
+    $_SESSION['username'] = $row_user['username'];
     if($row_user['role']== 0){
       if(isset($_POST['remember'])){
         setcookie("role", $row_user['role'], time() +(60*60*24*7), '/');
@@ -40,4 +41,3 @@ if(!empty($_POST)){
   }
 }
 mysqli_close($conn);
-?>
