@@ -193,4 +193,5 @@ $(document).ready(function () {
   let id = $("#productId").val();
   showAllProducts("all");
   showAllCategories();
+  $("#pageName").text("จัดการสินค้า");
 });

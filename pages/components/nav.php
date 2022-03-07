@@ -1,19 +1,5 @@
-<style>
-  nav {
-    background-color: #FFA500;
-  }
-
-  .navbar {
-    font-size: 20px;
-    text-decoration: none;
-    color: #fff;
-  }
-</style>
-
-<nav class="navbar navbar-light">
-  <div class="container-fluid">
-    <a href="#" class="navbar text-decoration-none">
-      ระบบเช็คสต็อกสินค้า
-    </a>
+<nav class=" navbar navbar-dark bg-warning">
+  <div class="container-fluid ">
+    <span class="navbar-brand mb-0 h1 text-dark" id="pageName">.</span>
   </div>
 </nav>

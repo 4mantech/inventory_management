@@ -1,126 +1,42 @@
-<style>
-  .sidebar-container {
-    position: absolute;
-    width: 325px;
-    height: 100%;
-    left: 0;
-    overflow-x: hidden;
-    overflow-y: auto;
-    background: #1a1a1a;
-    color: white;
-    box-shadow: 5px 0 5px -2px #888;
-  }
-
-  .content-container {
-    padding-top: 20px;
-  }
-
-  .sidebar-logo {
-    padding: 10px 15px 10px 30px;
-    font-size: 25px;
-    background-color: #FFA500;
-  }
-
-  .sidebar-navigation {
-    padding: 0;
-    margin: 0;
-    list-style-type: none;
-    position: relative;
-  }
-
-  .sidebar-navigation li {
-    background-color: transparent;
-    position: relative;
-    display: inline-block;
-    width: 100%;
-    line-height: 20px;
-  }
-
-  .sidebar-navigation li a {
-    padding: 10px 15px 10px 30px;
-    display: block;
-    color: white;
-  }
-
-  .sidebar-navigation li .fa {
-    margin-right: 10px;
-  }
-
-  .sidebar-navigation li a:active,
-  .sidebar-navigation li a:hover,
-  .sidebar-navigation li a:focus {
-    text-decoration: none;
-    outline: none;
-  }
-
-  .sidebar-navigation li::before {
-    background-color: #FFCC66;
-    position: absolute;
-    content: '';
-    height: 100%;
-    left: 0;
-    top: 0;
-    -webkit-transition: width 0.2s ease-in;
-    transition: width 0.2s ease-in;
-    width: 3px;
-    z-index: -1;
-  }
-
-  .sidebar-navigation li:hover::before {
-    width: 100%;
-  }
-
-  .sidebar-navigation .header {
-    font-size: 12px;
-    text-transform: uppercase;
-    background-color: #151515;
-    padding: 10px 15px 10px 30px;
-  }
-
-  .sidebar-navigation .header::before {
-    background-color: transparent;
-  }
-
-  .content-container {
-    padding-left: 220px;
-  }
-
-  a {
-    text-decoration: none;
-  }
-</style>
-
-
-<div class="sidebar-container">
-  <div class="sidebar-logo">
-    ระบบเช็คสต็อกสินค้า
-  </div>
-  <ul class="sidebar-navigation">
-    <li>
-      <a href="main.php">
-        <i class="fa fa-home" aria-hidden="true"></i> หน้าหลัก
-      </a>
-    </li>
-    <li>
-      <a href="showProducts.php">
-        <i class="fa fa-users" aria-hidden="true"></i> จัดการสินค้า
-      </a>
-    </li>
-    <li>
-      <a href="showCategories.php">
-        <i class="fa fa-tachometer" aria-hidden="true"></i> จัดการประเภทสินค้า
-      </a>
-    </li>
-    <li>
-      <a href="manageUsers.php">
-        <i class="fa fa-cog" aria-hidden="true"></i> จัดการผู้ใช้งาน
-      </a>
-    </li>
-    <hr>
-    <li>
-      <a href="query/logout.php">
-        <i class="fa fa-info-circle" aria-hidden="true"></i> ออกจากระบบ
-      </a>
-    </li>
-  </ul>
-</div>
+    <style>
+      .halo {
+        background-color: grey;
+      }
+    </style>
+    <!-- sidebar -->
+    <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
+      <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100 bg-">
+        <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+          <span class="fs-5 d-none d-sm-inline mt-2">ระบบเช็คสต็อกสินค้า</span>
+        </a>
+        <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+          <li class="nav-item">
+            <a href="main.php" class="nav-link align-middle px-0 text-white text-decoration-none">
+              <i class="fa fa-home" aria-hidden="true"></i> <span class="ms-1 d-none d-sm-inline">หน้าหลัก</span>
+            </a>
+          </li>
+          <li>
+            <a href="showProducts.php" class="nav-link px-0 align-middle text-white text-decoration-none">
+              <i class="fa fa-table" aria-hidden="true"></i> <span class="ms-1 d-none d-sm-inline">จัดการสินค้า</span></a>
+          </li>
+          <li>
+            <a href="showCategories.php" class="nav-link px-0 align-middle text-white text-decoration-none">
+              <i class="fa fa-table" aria-hidden="true"></i> <span class="ms-1 d-none d-sm-inline">จัดการประเภทสินค้า</span></a>
+          </li>
+          <li></li>
+          <a href=" manageUsers.php" class="nav-link px-0 align-middle text-white text-decoration-none">
+            <i class="fa fa-user" aria-hidden="true"></i> <span class="ms-1 d-none d-sm-inline ">จัดการผู้ใช้งาน</span></a>
+          </li>
+        </ul>
+        <hr class="venice">
+        <div class="dropdown pb-4">
+          <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+            <span class="d-none d-sm-inline mx-1">Username</span>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+            <li><a class="dropdown-item" href="query/logout.php">ออกจากระบบ</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- sidebar -->

@@ -2,9 +2,10 @@
 <html lang="en">
 
 <head>
-  <title>หน้าหลัก</title>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>จัดการสินค้า</title>
   <?php
   require('../boostrap5css.php');
   require('../boostrap5JS.php');
@@ -32,60 +33,55 @@
   </div>
 
   <div class="container-fluid">
-    <div class="row">
+    <div class="row flex-nowrap">
+      <?php require_once('components/sidebar.php') ?>
+      <div class="col p-0">
+        <!-- As a heading -->
+        <?php require_once('components/nav.php') ?>
+        <div class="container-fluid">
+          <div class="row mt-2" id="mainContents">
+            <div class="col-1"></div>
+            <div class="col-10">
 
-      <div class="col-2">
-        <?php
-        require('../pages/components/sideBar.php');
-        ?>
-      </div>
-      <div class="col-10">
-        <?php
-        require('../pages/components/nav.php');
-        ?>
-        <div class="p-4">
-          <div aria-label="breadcrumb">
-            <ol class="breadcrumb">
-              <li class="breadcrumb-item">จัดการรายการสินค้า</li>
-            </ol>
-          </div>
-        </div>
+              <div class="card p-3">
+                <div class="card-body" style="background-color: #fff;">
+                  <div class="row">
+                    <div class="col-1">
+                    </div>
+                    <div class="col-10">
+                      <a type="button" href="addProduct.php" class="btn btn-success mb-3">เพิ่มสินค้า</a>
 
-        <div class="card p-3" style="box-shadow: 0px 5px 5px -2px #888;">
-          <div class="card-body" style="background-color: #fff;">
-            <div class="row">
-              <div class="col-1">
-              </div>
-              <div class="col-10">
-                <a type="button" href="addProduct.php" class="btn btn-success mb-3">เพิ่มสินค้า</a>
+                      <div class="row mb-4">
+                        <div class="col-4 text-end">
+                          <h5 for="categoryId">ประเภทสินค้า : </h5>
+                        </div>
+                        <div class="col-4">
+                          <select class="form-select" name="categoryId" id="categoryId">
+                            <option value="all" selected>ทั้งหมด</option>
 
-                <div class="row mb-4">
-                  <div class="col-4 text-end">
-                    <h5 for="categoryId">ประเภทสินค้า : </h5>
-                  </div>
-                  <div class="col-4">
-                    <select class="form-select" name="categoryId" id="categoryId">
-                      <option value="all" selected>ทั้งหมด</option>
-
-                    </select>
+                          </select>
+                        </div>
+                      </div>
+                      <table class="table border" id="showAllProd">
+                        <thead>
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">ชื่อสินค้า</th>
+                            <th scope="col">ประเภทสินค้า</th>
+                            <th scope="col">จำนวน</th>
+                            <th class="text-center" scope="col">ดำเนินการ</th>
+                          </tr>
+                        </thead>
+                        <tbody id="prodTable">
+                        </tbody>
+                      </table>
+                    </div>
+                    <div class="col-1">
+                    </div>
                   </div>
                 </div>
-                <table class="table border" id="showAllProd">
-                  <thead>
-                    <tr>
-                      <th scope="col">#</th>
-                      <th scope="col">ชื่อสินค้า</th>
-                      <th scope="col">ประเภทสินค้า</th>
-                      <th scope="col">จำนวน</th>
-                      <th class="text-center" scope="col">ดำเนินการ</th>
-                    </tr>
-                  </thead>
-                  <tbody id="prodTable">
-                  </tbody>
-                </table>
               </div>
-              <div class="col-1">
-              </div>
+
             </div>
           </div>
         </div>

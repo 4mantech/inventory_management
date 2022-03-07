@@ -189,4 +189,5 @@ $(document).on("click", "#closeModalEdit", function () {
 
 $(document).ready(function () {
   showAllCategories();
+  $("#pageName").text("จัดการประเภทสินค้า");
 });

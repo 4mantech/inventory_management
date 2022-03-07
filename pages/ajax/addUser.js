@@ -1,36 +1,13 @@
 $(document).ready(function () {
-  showAllCategories();
-  $("#pageName").text("เพิ่มสินค้า");
+  $("#pageName").text("เพิ่มผู้ใช้งาน");
 });
 
-const showAllCategories = () => {
-  $.ajax({
-    type: "GET",
-    url: "query/showCategories.php",
-    success: function (response) {
-      const { cateObj } = JSON.parse(response);
-      if (cateObj == "null") {
-        $("#categoryId").prop("disabled", true);
-        $("#categoryId").append(`
-        <option value="0">ไม่พบประเภทสินค้า</option>
-        `);
-      } else {
-        cateObj.forEach((element) => {
-          $("#categoryId").append(`
-          <option value='${element.id}'>${element.categoryName}</option>
-          `);
-        });
-      }
-    },
-  });
-};
-
-const addProduct = (data) => {
+const addUser = (data) => {
   $.ajax({
     type: "POST",
     enctype: "multipart/form-data",
-    url: "query/addProduct.php",
-    data,
+    url: "query/addUser.php",
+    data: data,
     processData: false,
     contentType: false,
     cache: false,
@@ -39,12 +16,12 @@ const addProduct = (data) => {
       if (data.status == "true") {
         SoloAlert.alert({
           title: "สำเร็จ",
-          body: "เพิ่มสินค้าเรียบร้อยแล้ว",
+          body: "เพิ่มผู้ใช้งานเรียบร้อยแล้ว",
           icon: "success",
           theme: "light",
           useTransparency: true,
           onOk: function () {
-            window.location.href = "showProducts.php";
+            window.location.href = "manageUsers.php";
           },
         });
       } else {
@@ -71,7 +48,7 @@ Array.prototype.slice.call(forms).forEach(function (form) {
         event.stopPropagation();
       } else {
         let data = new FormData(forms[0]);
-        addProduct(data);
+        addUser(data);
       }
       form.classList.add("was-validated");
     },
