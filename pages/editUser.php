@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ผู้ใช้งาน</title>
+  <title>แก้ไขผู้ใช้งาน</title>
   <?php
   require('../boostrap5css.php');
   require('../boostrap5JS.php');
@@ -32,7 +32,7 @@
                       <a type="button" href="manageUsers.php" class="btn btn-danger mb-3">ย้อนกลับ</a>
                       <div class="card p-3">
                         <div class="card-body mb-4">
-                          <form enctype="multipart/form-data" class="needs-validation" id="addUserForm" novalidate>
+                          <form enctype="multipart/form-data" class="needs-validation" id="editUserForm" novalidate>
                             <!-- ข้อมูลทั่วไป -->
                             <div class="form-group row mt-2">
                               <!-- Category -->
@@ -131,6 +131,6 @@
       </div>
     </div>
 </body>
-<script src="ajax/addUser.js"></script>
+<script src="ajax/editUser.js"></script>
 
 </html>

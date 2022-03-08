@@ -30,7 +30,7 @@
               </div>
             </div>
             <div class="col-1"></div>
-            <div class="col-10">
+            <div class="col-10" id="found">
 
               <div class="card">
                 <div class="card-body">
@@ -58,7 +58,6 @@
                         <div class="row">
                           <div class="col">
                             <select class="form-select js-example-basic-single" id="categoryId" name="categoryId" required>
-                              <option selected disabled value="">Choose...</option>
                             </select>
                             <div class="valid-feedback">
                             </div>
@@ -91,7 +90,7 @@
                       </div>
                       <div class="col-4">
                         <label for="previewmodel">จำนวน</label>
-                        <input type="text" class="form-control" id="productQuantity" name="productQuantity" onkeypress='return event.charCode >= 48 && event.charCode <= 57' required>
+                        <input type="number" class="form-control" min="0" id="productQuantity" name="productQuantity" onkeypress='return event.charCode >= 48 && event.charCode <= 57' required>
                         <div class="valid-feedback">
                         </div>
                         <div class="invalid-feedback">

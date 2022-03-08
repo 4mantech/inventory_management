@@ -14,6 +14,23 @@ $("#productImage").change(function (e) {
   }
 });
 
+const showCategories = (id) => {
+  $.ajax({
+    type: "get",
+    url: "query/showCategories.php",
+    success: function (response) {
+      const { cateObj } = JSON.parse(response);
+      let html = "";
+      cateObj.forEach((element) => {
+        html += `<option value="${element.id}"`;
+        html += id == element.id ? "selected" : "";
+        html += `>${element.categoryName}</option>`;
+      });
+      $("#categoryId").html(html);
+    },
+  });
+};
+
 const showOneProduct = (id) => {
   $.ajax({
     type: "GET",
@@ -37,8 +54,50 @@ const showOneProduct = (id) => {
             class="rounded"
           ></img>
           `);
+        showCategories(data.categoryId);
       } else {
-        console.log("nulllll");
+        $("#found div").remove();
+        $(".col-10 a").remove();
+        $.get("components/404.php", function (data) {
+          $("#found").append(data);
+        });
+        console.log("รอเขียน 404");
+      }
+    },
+  });
+};
+
+const editProduct = (data) => {
+  $.ajax({
+    type: "POST",
+    enctype: "multipart/form-data",
+    url: "query/editProduct.php",
+    data: data,
+    processData: false,
+    contentType: false,
+    cache: false,
+    success: (response) => {
+      const data = JSON.parse(response);
+      if (data.status == "true") {
+        SoloAlert.alert({
+          title: "สำเร็จ!!",
+          body: "แก้ไขสินค้าสำเร็จ",
+          icon: "success",
+          theme: "light",
+          useTransparency: true,
+          onOk: () => {
+            window.location.href = "showProducts.php";
+          },
+        });
+      } else {
+        SoloAlert.alert({
+          title: "ผิดพลาด!!",
+          body: data.message,
+          icon: "success",
+          theme: "light",
+          useTransparency: true,
+          onOk: () => {},
+        });
       }
     },
   });
@@ -54,7 +113,7 @@ Array.prototype.slice.call(forms).forEach(function (form) {
         event.stopPropagation();
       } else {
         let data = new FormData(forms[0]);
-        addProduct(data);
+        editProduct(data);
       }
       form.classList.add("was-validated");
     },

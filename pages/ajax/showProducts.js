@@ -109,12 +109,12 @@ const showOneProduct = (id) => {
     type: "GET",
     url: "query/showOneProduct.php",
     data: { id },
-    success: function (data) {
-      const { productObj } = JSON.parse(data);
+    success: function (response) {
+      const data = JSON.parse(response);
       $("#ProductDetailModal").modal("show");
       $("#detail").append(`
       <div class="col-6">
-              <img src="../assets/images/products/${productObj.productImage}" id="productImg" style="height:500;width:100%;border-radius:5px;">
+              <img src="../assets/images/products/${data.productImage}" id="productImg" style="height:500;width:100%;border-radius:5px;">
             </div>
             <div class="col-3">
               <div class="row">
@@ -122,7 +122,7 @@ const showOneProduct = (id) => {
                   <p>ชื่อสินค้า:</p>
                 </div>
                 <div class="col-6">
-                  <p>${productObj.productName}</p>
+                  <p>${data.productName}</p>
                 </div>
               </div>
               <div class="row">
@@ -130,7 +130,7 @@ const showOneProduct = (id) => {
                   <p>รายละเอียดสินค้า:</p>
                 </div>
                 <div class="col-6">
-                  <p>${productObj.productDetail}</p>
+                  <p>${data.productDetail}</p>
                 </div>
               </div>
               <div class="row">
@@ -138,7 +138,7 @@ const showOneProduct = (id) => {
                   <p>ประเภทของสินค้า:</p>
                 </div>
                 <div class="col-6">
-                  <p>${productObj.categoryName}</p>
+                  <p>${data.categoryName}</p>
                 </div>
               </div>
               <div class="row">
@@ -146,7 +146,7 @@ const showOneProduct = (id) => {
                   <p>สี:</p>
                 </div>
                 <div class="col-6">
-                  <p>${productObj.color}</p>
+                  <p>${data.color}</p>
                 </div>
               </div>
               <div class="row">
@@ -154,7 +154,7 @@ const showOneProduct = (id) => {
                   <p>ขนาด:</p>
                 </div>
                 <div class="col-6">
-                  <p>${productObj.size}</p>
+                  <p>${data.size}</p>
                 </div>
               </div>
               <div class="row">
@@ -162,7 +162,7 @@ const showOneProduct = (id) => {
                   <p>จำนวน:</p>
                 </div>
                 <div class="col-6">
-                  <p>${productObj.productQuantity}</p>
+                  <p>${data.productQuantity}</p>
                 </div>
               </div>
             </div>

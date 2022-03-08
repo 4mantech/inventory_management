@@ -13,6 +13,25 @@
 </head>
 
 <body>
+
+  <!-- Modal -->
+  <div class="modal fade" id="userModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="ProductDetailModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="userModalLabel">รายละเอียดสินค้า</h5>
+          <button type="button" id="close1" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row" id="user">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="close2" class="btn btn-danger" data-bs-dismiss="modal">ปิด</button>
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="container-fluid">
     <div class="row flex-nowrap">
       <?php require_once('components/sidebar.php') ?>
@@ -37,7 +56,7 @@
                             <th scope="col">ชื่อจริง - นามสกุล</th>
                             <th scope="col">อีเมล</th>
                             <th scope="col">เบอร์โทรศัพท์</th>
-                            <th scope="col">ดำเนินการ</th>
+                            <th class="text-center" scope="col">ดำเนินการ</th>
                           </tr>
                         </thead>
                         <tbody id="empTable">

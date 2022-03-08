@@ -84,7 +84,7 @@
                           </div>
                           <div class="col-4">
                             <label for="previewmodel">จำนวน</label>
-                            <input type="text" class="form-control" id="productQuantity" name="productQuantity" onkeypress='return event.charCode >= 48 && event.charCode <= 57' required>
+                            <input type="number" class="form-control" id="productQuantity" min="0" name="productQuantity" onkeypress='return event.charCode >= 48 && event.charCode <= 57' required>
                             <div class="valid-feedback">
                             </div>
                             <div class="invalid-feedback">

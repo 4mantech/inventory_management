@@ -17,12 +17,13 @@ const showAllUsers = () => {
           <td>${element.firstName} ${element.lastName}</td>
           <td>${element.email}</td>
           <td>${element.tel}</td>
-          <td><button class="btn btn-warning" onclick="editUser(${
-            element.id
-          })">แก้ไขผู้ใช้งาน</button>
-          <button class="btn btn-danger" onclick="deleteUser(${
-            element.id
-          })">ลบผู้ใช้งาน</button></td>
+          <td class="text-center" scope="col">
+            <a href="editUser.php?id=${
+              element.id
+            }" type="button" class="btn btn-warning">แก้ไข</a>
+            <button class="btn btn-danger" onclick="deleteUser(${
+              element.id
+            })">ลบ</button></td>
          </tr>
         `);
         table = $("#showAllEmployees").dataTable();
@@ -30,8 +31,6 @@ const showAllUsers = () => {
     },
   });
 };
-
-const addUser = () => {};
 
 const deleteUser = (id) => {
   SoloAlert.confirm({
@@ -45,18 +44,18 @@ const deleteUser = (id) => {
         data: {
           id: id,
         },
-        success: function (data) {
-          const { status } = JSON.perse(data);
-          if (status == "true") {
+        success: function (response) {
+          const data = JSON.parse(response);
+          if (data.status == "true") {
             SoloAlert.alert({
               title: "สำเร็จ",
               body: "ลบผู้ใช้งานสำเร็จสำเร็จ",
               icon: "success",
               useTransparency: true,
               onOk: () => {
-                $("#showAllUser").DataTable().destroy();
-                $("#UserTable").children().remove();
-                showAllCategories();
+                $("#showAllEmployees").DataTable().destroy();
+                $("#empTable").children().remove();
+                showAllUsers();
               },
             });
           } else {
