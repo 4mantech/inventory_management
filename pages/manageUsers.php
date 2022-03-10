@@ -48,6 +48,9 @@
                     <div class="col-1">
                     </div>
                     <div class="col-10">
+                    <div class="text-center mb-2">
+                        <b style="font-size : 20px">แสดงผู้ใช้งาน</b>
+                      </div>
                       <a type="button" href="addUser.php" class="btn btn-success mb-3">เพิ่มผู้ใช้งาน</a>
                       <table class="table border" id="showAllEmployees">
                         <thead>

@@ -26,7 +26,7 @@
               <div class="col-1">
               </div>
               <div class="col-10">
-                <a type="button" href="showProducts.php" class="btn btn-danger mb-3">ย้อนกลับ</a>
+                <a type="button" href="javascript:history.back()" class="btn btn-danger mb-3">ย้อนกลับ</a>
               </div>
             </div>
             <div class="col-1"></div>
@@ -36,6 +36,7 @@
                 <div class="card-body">
                   <form enctype="multipart/form-data" class="needs-validation" id="addProductForm" novalidate>
                     <input type="hidden" name="productId" id="productId" value="<?php echo $_GET['id']; ?>">
+                    <input type="hidden" name="history" id="history" value="<?php echo $_GET['history']; ?>">
                     <!-- ข้อมูลทั่วไป -->
                     <div class="form-group row mt-2">
                       <!-- Category -->
@@ -144,5 +145,6 @@
   </div>
 </body>
 <script src="ajax/editProduct.js"></script>
+
 
 </html>

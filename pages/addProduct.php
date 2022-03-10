@@ -25,7 +25,7 @@
             <div class="col-10">
               <div class="card p-3" style="box-shadow: 0px 5px 5px -2px #888;">
                 <div class="card-body mb-4" style="background-color: #fff;">
-                  <a type="button" href="showProducts.php" class="btn btn-danger mb-3">ย้อนกลับ</a>
+                  <a type="button" href="javascript:history.back()" class="btn btn-danger mb-3">ย้อนกลับ</a>
                   <div class="card">
                     <div class="card-body">
                       <form enctype="multipart/form-data" class="needs-validation" id="addProductForm" novalidate>

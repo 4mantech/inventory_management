@@ -49,6 +49,10 @@
                     <div class="col-1">
                     </div>
                     <div class="col-10">
+
+                    <div class="text-center mb-2">
+                        <b style="font-size : 20px">แสดงสินค้าทั้งหมด</b>
+                      </div>
                       <a type="button" href="addProduct.php" class="btn btn-success mb-3">เพิ่มสินค้า</a>
 
                       <div class="row mb-4">

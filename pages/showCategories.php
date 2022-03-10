@@ -77,6 +77,10 @@
                   <div class="col-2">
                   </div>
                   <div class="col-8">
+
+                  <div class="text-center mb-2">
+                        <b style="font-size : 20px">แสดงประเภทสินค้า</b>
+                      </div>
                     <button type="button" id="addCategory" class="btn btn-success mb-3">เพิ่มประเภทสินค้า</button>
                     <table class="table table-hover border" id="showAllCate">
                       <thead>

@@ -1,37 +1,40 @@
-const showAllProducts = (categoryId) => {
+const showLessProduct = (categoryId) => {
+  console.log(categoryId);
   $.ajax({
     type: "GET",
-    url: "query/showProducts.php",
+    url: "query/showLessProducts.php",
     data: {
       categoryId,
     },
     success: function (data) {
-      const { productsObj } = JSON.parse(data);
-      if (productsObj == null) {
+      const { lessProdObj } = JSON.parse(data);
+      if (lessProdObj == null) {
       } else {
-        productsObj.forEach((element, index) => {
-          $("#prodTable").append(`
-          <tr>
-            <td scope="col">${++index}</td>
-            <td scope="col">${element.productName}</td>
-            <td scope="col">${element.categoryName}</td>
-            <td scope="col">${element.productQuantity}</td>
-            <td class="text-center" scope="col">
-              <button type="button" class="btn btn-info" onclick="showOneProduct(${
-                element.id
-              })">รายละเอียด</button>
-              <a href="editProduct.php?id=${
-                element.id
-              }" type="button" class="btn btn-warning">แก้ไข</a>
-              <button type="button" class="btn btn-danger" onclick="deleteProduct(${
-                element.id
-              })">ลบ</button>
-              </td>
-         </tr>
-            `);
+        lessProdObj.forEach((element, index) => {
+          $("#LessTable").append(`
+        <tr>
+          <td scope="col">${++index}</th>
+          <td scope="col">${element.productName}</th>
+          <td scope="col">${element.categoryName}</td>
+          <td style="color:red;" class="text-center" scope="col">${
+            element.productQuantity
+          }</th>
+          <td class="text-center" scope="col">
+          <button type="button" class="btn btn-info" onclick="showOneProduct(${
+            element.id
+          })">รายละเอียด</button>
+          <a href="editProduct.php?id=${
+            element.id
+          }&history=less" type="button" class="btn btn-warning">แก้ไข</a>
+          <button type="button" class="btn btn-danger" onclick="deleteProduct(${
+            element.id
+          })">ลบ</button>
+          </td>
+        </tr>
+        `);
         });
       }
-      $("#showAllProd").dataTable({
+      $("#showLessProduct").dataTable({
         language: {
           emptyTable: "ไม่มีข้อมูลสินค้า",
           search: "ค้นหา",
@@ -85,9 +88,9 @@ const deleteProduct = (id) => {
               theme: "light",
               useTransparency: true,
               onOk: () => {
-                $("#showAllProd").DataTable().destroy();
-                $("#prodTable").children().remove();
-                showAllProducts();
+                $("#showLessProduct").DataTable().destroy();
+                $("#LessTable").children().remove();
+                showLessProduct();
               },
             });
           } else {
@@ -174,9 +177,9 @@ const showOneProduct = (id) => {
 
 $("#categoryId").change(function (e) {
   e.preventDefault();
-  $("#showAllProd").DataTable().destroy();
-  $("#prodTable").children().remove();
-  showAllProducts(e.target.value);
+  $("#showLessProduct").DataTable().destroy();
+  $("#LessTable").children().remove();
+  showLessProduct(e.target.value);
 });
 $("#close1").click(function (e) {
   e.preventDefault();
@@ -193,7 +196,7 @@ $("#close2").click(function (e) {
 
 $(document).ready(function () {
   let id = $("#productId").val();
-  showAllProducts("all");
+  showLessProduct("all");
   showAllCategories();
-  $("#pageName").text("จัดการสินค้า");
+  $("#pageName").text("จัดการสินค้าที่เหลือน้อย");
 });

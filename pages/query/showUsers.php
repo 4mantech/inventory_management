@@ -1,6 +1,6 @@
 <?php
 require('connect.php');
-$sql = "SELECT * FROM users";
+$sql = "SELECT * FROM users WHERE role != 0";
 $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) >= 1) {

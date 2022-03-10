@@ -1,19 +1,9 @@
-INSERT INTO
-    products (
-        categoryId,
-        productName,
-        productDetail,
-        size,
-        color,
-        productImage,
-        productQuantity
-    )
-VALUES (
-        'categoryId',
-        'productName',
-        'productDetail',
-        'size',
-        'color',
-        'productImage',
-        'productQuantity'
-    )
+UPDATE
+    `users`
+SET
+    `firstName` = '$firstName',
+    `lastName` = '$lastName',
+    `email` = '$email',
+    `tel` = '$tel'
+WHERE
+    id = '$id'
