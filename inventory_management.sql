@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 04, 2022 at 05:28 PM
+-- Generation Time: Mar 10, 2022 at 09:25 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.3.30
 
@@ -37,19 +37,16 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id`, `categoryName`) VALUES
-(9, 'เวนิส'),
-(10, 'Venice'),
+(54, '1234'),
 (21, 'asdasd'),
-(31, 'venice1'),
-(32, 'venice2'),
-(33, 'venice3'),
-(34, 'venice4'),
-(35, 'venice5'),
-(36, 'venice6'),
-(37, 'venice7'),
-(38, 'venice8'),
-(39, 'venice9'),
-(40, 'venice10');
+(47, 'dasdasd'),
+(48, 'dasdddd'),
+(52, 'dd'),
+(46, 'ddd'),
+(63, 'helloWorld ค้าบ'),
+(61, 'ป๋อมแป๋ม'),
+(62, 'สวัสดีจ้า'),
+(57, 'อปปป');
 
 -- --------------------------------------------------------
 
@@ -67,6 +64,15 @@ CREATE TABLE `products` (
   `productImage` text NOT NULL,
   `productQuantity` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `products`
+--
+
+INSERT INTO `products` (`id`, `categoryId`, `productName`, `productDetail`, `size`, `color`, `productImage`, `productQuantity`) VALUES
+(12, 47, 'ทดสอบ', 'อิอิ', '1*2*3', 'แดง', 'noProductImage.jpg', 32),
+(16, 47, 'ชื่อสินนค้าasd', '6666', 'asdasd', 'แดง', 'noProductImage.jpg', 55),
+(17, 63, 'สวัสดีน้าบ', 'ddddddd', '50x50x50', 'แดง', 'สวัสดีน้าบ.jpg', 69);
 
 -- --------------------------------------------------------
 
@@ -90,7 +96,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `role`, `firstName`, `lastName`, `email`, `tel`) VALUES
-(1, 'admin', '5fb7b875c508202d964fbaafe213665b5bc210fd9fa1f23eac41d2b227ebe351', 0, 'Admin', 'Venice', 'venice@admin.com', '0123456789');
+(2, 'admin', '5fb7b875c508202d964fbaafe213665b5bc210fd9fa1f23eac41d2b227ebe351', 0, 'เวนิส', 'test', 'admin@gmail.com', '0655899874'),
+(4, 'kantapat', '5fb7b875c508202d964fbaafe213665b5bc210fd9fa1f23eac41d2b227ebe351', 1, 'kantapat', 'supaweerawat', 'kantapat@mail.com', '0987290448');
 
 --
 -- Indexes for dumped tables
@@ -100,7 +107,8 @@ INSERT INTO `users` (`id`, `username`, `password`, `role`, `firstName`, `lastNam
 -- Indexes for table `categories`
 --
 ALTER TABLE `categories`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `categoryName` (`categoryName`);
 
 --
 -- Indexes for table `products`
@@ -113,7 +121,9 @@ ALTER TABLE `products`
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `username` (`username`),
+  ADD UNIQUE KEY `email` (`email`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -123,19 +133,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Constraints for dumped tables
