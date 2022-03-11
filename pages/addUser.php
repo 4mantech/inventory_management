@@ -17,7 +17,6 @@
     <div class="row flex-nowrap">
       <?php require_once('components/sidebar.php') ?>
       <div class="col p-0">
-        <!-- As a heading -->
         <?php require_once('components/nav.php') ?>
         <div class="container-fluid">
           <div class="row mt-2" id="mainContents">
@@ -33,9 +32,7 @@
                       <div class="card p-3">
                         <div class="card-body mb-4">
                           <form enctype="multipart/form-data" class="needs-validation" id="addUserForm" novalidate>
-                            <!-- ข้อมูลทั่วไป -->
                             <div class="form-group row mt-2">
-                              <!-- Category -->
                               <div class="col-6">
                                 <label>Username</label>
                                 <div class="row">
@@ -49,7 +46,6 @@
                                   </div>
                                 </div>
                               </div>
-                              <!-- Product Type -->
                               <div class="col-6">
                                 <label>Password</label>
                                 <input type="password" class="form-control" id="password" name="password" placeholder="กรอก Password" required>
@@ -61,7 +57,6 @@
                               </div>
                             </div>
                             <div class="form-group row mt-2">
-                              <!-- Brand/Model -->
                               <div class="col-6">
                                 <label>ชื่อจริง</label>
                                 <div class="row">
@@ -75,7 +70,6 @@
                                   </div>
                                 </div>
                               </div>
-                              <!-- Product Type -->
                               <div class="col-6">
                                 <label>นามสกุล</label>
                                 <input type="text" class="form-control" id="lastname" name="lastname" placeholder="กรอกนามสกุล" required>
@@ -87,7 +81,6 @@
                               </div>
                             </div>
                             <div class="form-group row mt-2">
-                              <!-- Brand/Model -->
                               <div class="col-6">
                                 <label>อีเมล</label>
                                 <div class="row">
@@ -101,7 +94,6 @@
                                   </div>
                                 </div>
                               </div>
-                              <!-- Product Type -->
                               <div class="col-6">
                                 <label>เบอร์โทรศัพท์</label>
                                 <input type="text" class="form-control" id="tel" name="tel" placeholder="กรอกหมายเลขโทรศัพท์" onkeypress='return event.charCode >= 48 && event.charCode <= 57' required>
@@ -113,7 +105,6 @@
                               </div>
                             </div>
                         </div>
-                      
                       </div>
                       <div class="text-end mt-4 mb-2">
                         <input type="submit" class="btn btn-success btn-lg" value="บันทึก">

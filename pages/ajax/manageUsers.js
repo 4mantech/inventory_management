@@ -17,13 +17,13 @@ const showAllUsers = () => {
           <td>${element.firstName} ${element.lastName}</td>
           <td>${element.email}</td>
           <td>${element.tel}</td>
-          <td class="text-center" scope="col">
-            <a href="editUser.php?id=${
-              element.id
-            }" type="button" class="btn btn-warning">แก้ไข</a>
-            <button class="btn btn-danger" onclick="deleteUser(${
-              element.id
-            })">ลบ</button></td>
+          <td>
+          <a href="editUser.php?id=${
+            element.id
+          }" type="button" class="btn btn-warning">แก้ไข</a>
+          <button class="btn btn-danger" onclick="deleteUser(${
+            element.id
+          })">ลบผู้ใช้งาน</button></td>
          </tr>
         `);
         table = $("#showAllEmployees").dataTable();
@@ -44,18 +44,18 @@ const deleteUser = (id) => {
         data: {
           id: id,
         },
-        success: function (response) {
-          const data = JSON.parse(response);
-          if (data.status == "true") {
+        success: function (data) {
+          const { status } = JSON.perse(data);
+          if (status == "true") {
             SoloAlert.alert({
               title: "สำเร็จ",
               body: "ลบผู้ใช้งานสำเร็จสำเร็จ",
               icon: "success",
               useTransparency: true,
               onOk: () => {
-                $("#showAllEmployees").DataTable().destroy();
-                $("#empTable").children().remove();
-                showAllUsers();
+                $("#showAllUser").DataTable().destroy();
+                $("#UserTable").children().remove();
+                showAllCategories();
               },
             });
           } else {
@@ -64,6 +64,9 @@ const deleteUser = (id) => {
               body: "ไม่สามารถลบชื่อผู้ใช้ได้",
               icon: "error",
               useTransparency: true,
+              onOk: () => {
+                location.reload();
+              },
             });
           }
         },

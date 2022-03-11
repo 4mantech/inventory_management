@@ -16,6 +16,7 @@ if(!empty($_POST)){
     $row_user = mysqli_fetch_array($result_user,MYSQLI_ASSOC);
     if(isset($_POST['remember'])){
       setcookie("loginId", $row_user['id'], time() +(60*60*24*7), '/');
+      setcookie("username", $row_user['username'], time() +(60*60*24*7), '/');
     }
     $_SESSION['loginId'] = $row_user['id'];
     $_SESSION['username'] = $row_user['username'];

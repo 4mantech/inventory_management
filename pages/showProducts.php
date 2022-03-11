@@ -42,19 +42,18 @@
           <div class="row mt-2" id="mainContents">
             <div class="col-1"></div>
             <div class="col-10">
-
               <div class="card p-3">
                 <div class="card-body" style="background-color: #fff;">
                   <div class="row">
                     <div class="col-1">
                     </div>
                     <div class="col-10">
-
-                    <div class="text-center mb-2">
+                      <div class="text-center mb-2">
                         <b style="font-size : 20px">แสดงสินค้าทั้งหมด</b>
                       </div>
-                      <a type="button" href="addProduct.php" class="btn btn-success mb-3">เพิ่มสินค้า</a>
-
+                      <?php if ($_SESSION['role'] == 0) { ?>
+                        <a type="button" href="addProduct.php" class="btn btn-success mb-3">เพิ่มสินค้า</a>
+                      <?php  } ?>
                       <div class="row mb-4">
                         <div class="col-4 text-end">
                           <h5 for="categoryId">ประเภทสินค้า : </h5>
@@ -62,7 +61,6 @@
                         <div class="col-4">
                           <select class="form-select" name="categoryId" id="categoryId">
                             <option value="all" selected>ทั้งหมด</option>
-
                           </select>
                         </div>
                       </div>
@@ -85,7 +83,6 @@
                   </div>
                 </div>
               </div>
-
             </div>
           </div>
         </div>

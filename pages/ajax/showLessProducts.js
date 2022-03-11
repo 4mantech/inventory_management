@@ -1,5 +1,11 @@
+$(document).ready(function () {
+  let id = $("#productId").val();
+  showLessProduct("all");
+  showAllCategories();
+  $("#pageName").text("จัดการสินค้าที่เหลือน้อย");
+  const userRole = $("#userRole").val();
+});
 const showLessProduct = (categoryId) => {
-  console.log(categoryId);
   $.ajax({
     type: "GET",
     url: "query/showLessProducts.php",
@@ -10,29 +16,30 @@ const showLessProduct = (categoryId) => {
       const { lessProdObj } = JSON.parse(data);
       if (lessProdObj == null) {
       } else {
+        let html = "";
         lessProdObj.forEach((element, index) => {
-          $("#LessTable").append(`
-        <tr>
-          <td scope="col">${++index}</th>
-          <td scope="col">${element.productName}</th>
-          <td scope="col">${element.categoryName}</td>
-          <td style="color:red;" class="text-center" scope="col">${
-            element.productQuantity
-          }</th>
-          <td class="text-center" scope="col">
-          <button type="button" class="btn btn-info" onclick="showOneProduct(${
-            element.id
-          })">รายละเอียด</button>
-          <a href="editProduct.php?id=${
-            element.id
-          }&history=less" type="button" class="btn btn-warning">แก้ไข</a>
-          <button type="button" class="btn btn-danger" onclick="deleteProduct(${
-            element.id
-          })">ลบ</button>
-          </td>
-        </tr>
-        `);
+          html += `
+          <tr>
+            <td scope="col">${++index}</td>
+            <td scope="col">${element.productName}</td>
+            <td scope="col">${element.categoryName}</td>
+            <td scope="col" class="text-center" style="color:red;">${
+              element.productQuantity
+            }</td>
+            <td class="text-center" scope="col">
+              <button type="button" class="btn btn-info" onclick="showOneProduct(${
+                element.id
+              })">รายละเอียด</button>
+            `;
+          if (userRole == 0) {
+            html += `<a href="editProduct.php?id=${element.id}" type="button" class="btn btn-warning">แก้ไข</a>
+              <button type="button" class="btn btn-danger" onclick="deleteProduct(${element.id})">ลบ</button>`;
+          }
+          html += `</td>
+          </tr>`;
         });
+        console.log(html);
+        $("#LessTable").append(html);
       }
       $("#showLessProduct").dataTable({
         language: {
@@ -192,11 +199,4 @@ $("#close2").click(function (e) {
   setTimeout(() => {
     $("#detail").children().remove();
   }, 400);
-});
-
-$(document).ready(function () {
-  let id = $("#productId").val();
-  showLessProduct("all");
-  showAllCategories();
-  $("#pageName").text("จัดการสินค้าที่เหลือน้อย");
 });

@@ -8,7 +8,6 @@ $size = $_POST['size'];
 $color = $_POST['color'];
 $productQuantity = $_POST['productQuantity'];
 $productDetail=  $_POST['productDetail'];
-$productImage=  $_POST['productImage'];
 
 $checkProduct = "SELECT * FROM products WHERE id =  '$id'";
 $resultCheck = mysqli_query($conn,$checkProduct);

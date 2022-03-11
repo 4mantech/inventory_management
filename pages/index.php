@@ -3,6 +3,7 @@ session_start();
 if (isset($_COOKIE['loginId']) && isset($_COOKIE['role'])) {
   $_SESSION['loginId'] = $_COOKIE['loginId'];
   $_SESSION['role'] = $_COOKIE['role'];
+  $_SESSION['username'] = $_COOKIE['username'];
   header("Location:main.php");
 }
 ?>
@@ -24,12 +25,15 @@ if (isset($_COOKIE['loginId']) && isset($_COOKIE['role'])) {
 </head>
 
 <body style="background-color: #666666;">
-
   <div class="limiter">
     <div class="container-login100">
       <div class="wrap-login100">
         <form class="login100-form validate-form" id="loginForm" method="POST" enctype="multipart/form-data">
-          <span class="login100-form-title p-b-43">
+          <div class="text-center mb-3">
+            <img src="../assets//images/logo.png" class="rounded-circle" alt="..." height="150px">
+          </div>
+          <span class="login100-form-title mt-4 p-b-43">
+            <!-- <img src="..." alt="..." class="rounded-circle"> -->
             เข้าสู่ระบบ
           </span>
           <div class="wrap-input100 validate-input" data-validate="กรุณากรอกชื่อผู้ใช้">
@@ -59,7 +63,7 @@ if (isset($_COOKIE['loginId']) && isset($_COOKIE['role'])) {
         </form>
 
         <div class="login100-more" style="background-image: url('../assets/images/vvv.jpg');">
-          <h1 style="
+          <B style="
         color: white;
         border-radius: 1em;
         padding: 1em;
@@ -67,18 +71,21 @@ if (isset($_COOKIE['loginId']) && isset($_COOKIE['role'])) {
         top: 50%;
         left: 50%;
         margin-right: -50%;
-        transform: translate(-50%, -50%) 
-        ">F R E E S T Y L E</h1>
+        font-size: 100px;
+        transform: translate(-50%, -50%) ;
+        user-select:none;
+        ">D B </B>
           <h2 style="
         color: white;
         border-radius: 1em;
         padding: 1em;
         position: absolute;
-        top: 54%;
+        top: 58%;
         left: 50%;
         margin-right: -50%;
-        transform: translate(-50%, -50%) 
-        ">K I M I N O T O </h2>
+        transform: translate(-50%, -50%);
+        user-select:none;
+        ">H O M E </h2>
         </div>
       </div>
     </div>

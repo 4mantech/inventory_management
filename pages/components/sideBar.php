@@ -20,14 +20,16 @@
             <a href="showProducts.php" class="nav-link px-0 align-middle text-white text-decoration-none">
               <i class="fa fa-table" aria-hidden="true"></i> <span class="ms-1 d-none d-sm-inline">จัดการสินค้า</span></a>
           </li>
+          <?php if($_SESSION['role'] == 0){ ?>
           <li>
             <a href="showCategories.php" class="nav-link px-0 align-middle text-white text-decoration-none">
               <i class="fa fa-table" aria-hidden="true"></i> <span class="ms-1 d-none d-sm-inline">จัดการประเภทสินค้า</span></a>
           </li>
-          <li></li>
+          <li>
           <a href=" manageUsers.php" class="nav-link px-0 align-middle text-white text-decoration-none">
             <i class="fa fa-user" aria-hidden="true"></i> <span class="ms-1 d-none d-sm-inline ">จัดการผู้ใช้งาน</span></a>
           </li>
+          <?php } ?>
         </ul>
         <hr class="venice">
         <div class="dropdown pb-4">

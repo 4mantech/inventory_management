@@ -1,3 +1,11 @@
+$(document).ready(function () {
+  let id = $("#productId").val();
+  showAllProducts("all");
+  showAllCategories();
+  $("#pageName").text("จัดการสินค้า");
+  const userRole = $("#userRole").val();
+});
+
 const showAllProducts = (categoryId) => {
   $.ajax({
     type: "GET",
@@ -9,8 +17,9 @@ const showAllProducts = (categoryId) => {
       const { productsObj } = JSON.parse(data);
       if (productsObj == null) {
       } else {
+        let html = "";
         productsObj.forEach((element, index) => {
-          $("#prodTable").append(`
+          html += `
           <tr>
             <td scope="col">${++index}</td>
             <td scope="col">${element.productName}</td>
@@ -20,16 +29,14 @@ const showAllProducts = (categoryId) => {
               <button type="button" class="btn btn-info" onclick="showOneProduct(${
                 element.id
               })">รายละเอียด</button>
-              <a href="editProduct.php?id=${
-                element.id
-              }" type="button" class="btn btn-warning">แก้ไข</a>
-              <button type="button" class="btn btn-danger" onclick="deleteProduct(${
-                element.id
-              })">ลบ</button>
-              </td>
-         </tr>
-            `);
+            `;
+          if (userRole == 0) {
+            html += `<a href="editProduct.php?id=${element.id}" type="button" class="btn btn-warning">แก้ไข</a>
+              <button type="button" class="btn btn-danger" onclick="deleteProduct(${element.id})">ลบ</button>`;
+          }
+          html += `</td></tr>`;
         });
+        $("#prodTable").append(html);
       }
       $("#showAllProd").dataTable({
         language: {
@@ -189,11 +196,4 @@ $("#close2").click(function (e) {
   setTimeout(() => {
     $("#detail").children().remove();
   }, 400);
-});
-
-$(document).ready(function () {
-  let id = $("#productId").val();
-  showAllProducts("all");
-  showAllCategories();
-  $("#pageName").text("จัดการสินค้า");
 });

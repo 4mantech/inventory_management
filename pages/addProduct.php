@@ -17,7 +17,6 @@
     <div class="row flex-nowrap">
       <?php require_once('components/sidebar.php') ?>
       <div class="col p-0">
-        <!-- As a heading -->
         <?php require_once('components/nav.php') ?>
         <div class="container-fluid">
           <div class="row mt-2" id="mainContents">
@@ -29,9 +28,7 @@
                   <div class="card">
                     <div class="card-body">
                       <form enctype="multipart/form-data" class="needs-validation" id="addProductForm" novalidate>
-                        <!-- ข้อมูลทั่วไป -->
                         <div class="form-group row mt-2">
-                          <!-- Category -->
                           <div class="col-6">
                             <label for="previewcategory">ชื่อสินค้า</label>
                             <div class="row">
@@ -45,7 +42,6 @@
                               </div>
                             </div>
                           </div>
-                          <!-- Product Type -->
                           <div class="col-6">
                             <label for="previewtypeproduct">ประเภทสินค้า</label>
                             <div class="row">
@@ -63,7 +59,6 @@
                           </div>
                         </div>
                         <div class="form-group row mt-2">
-                          <!-- Brand/Model -->
                           <div class="col-4">
                             <label for="previewmodel">ขนาด</label>
                             <input type="text" class="form-control" id="size" name="size" placeholder="กว้างxยาวxสูง" required>
