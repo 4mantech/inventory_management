@@ -1,10 +1,7 @@
 <?php require('query/checkLogin.php'); ?>
-    <style>
-      .halo {
-        background-color: grey;
-      }
-    </style>
     <!-- sidebar -->
+    <input type="hidden" name="userRole" id="userRole" value="<?php echo $_SESSION['role']; ?>">
+    <input type="hidden" name="loginId" id="loginId" value="<?php echo $_SESSION['loginId']; ?>">
     <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
       <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100 bg-">
         <a href="main.php" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">

@@ -61,7 +61,6 @@ const showOneProduct = (id) => {
         $.get("components/404.php", function (data) {
           $("#found").append(data);
         });
-        console.log("รอเขียน 404");
       }
     },
   });
