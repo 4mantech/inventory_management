@@ -54,7 +54,7 @@
             <div class="col-1">
             </div>
             <div class="col-10" id="found">
-              <div class="card p-3 mt-4" style="box-shadow: 0px 5px 5px -2px #888;">
+              <div class="card p-3 mt-4">
                 <div class="card-body" style="background-color: #fff;">
                   <div class="row">
                     <div class="col-3">
@@ -63,7 +63,7 @@
                       <div class="text-center mb-2">
                         <b style="font-size : 20px">จัดการผู้ใช้งาน</b>
                       </div>
-                      <a type="button" href="manageUsers.php" class="btn btn-danger mb-3">ย้อนกลับ</a>
+                      <a type="button" href="manageUsers.php" class="btn btn-danger mb-3"><i class="fa fa-arrow-left" aria-hidden="true"></i> ย้อนกลับ</a>
                       <div class="card p-3">
                         <div class="card-body mb-4">
                           <form enctype="multipart/form-data" class="needs-validation" id="editUserForm" novalidate>
@@ -128,11 +128,11 @@
                             </div>
                             <div class="text-end">
                               
-                            <button type="button" class="btn btn-warning mb-3" data-bs-toggle="modal" data-bs-target="#changePasswordModal">เปลียนรหัสผ่าน</button>
+                            <button type="button" class="btn btn-warning mb-3" data-bs-toggle="modal" data-bs-target="#changePasswordModal"><i class="fa fa-key" aria-hidden="true"></i> เปลียนรหัสผ่าน</button>
                             </div>
                       </div>
                       <div class="text-end mt-4 mb-2">
-                        <input type="submit" class="btn btn-success btn-lg" value="บันทึก">
+                        <button type="submit" class=" btn btn-success btn-lg "><i class="fa fa-floppy-o" aria-hidden="true"></i> บันทึก</button>
                       </div>
                     </div>
                     </form>

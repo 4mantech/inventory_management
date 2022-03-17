@@ -23,7 +23,7 @@
           <div class="row mt-2" id="mainContents">
             <div class="col-1"></div>
             <div class="col-10">
-              <div class="card p-3" style="box-shadow: 0px 5px 5px -2px #888;">
+              <div class="card p-3">
                 <div class="card-body" style="background-color: #fff;">
                   <div class="row">
                     <div class="col-1">
@@ -32,7 +32,7 @@
                       <div class="text-center mb-2">
                         <b style="font-size : 20px">แสดงผู้ใช้งาน</b>
                       </div>
-                      <a type="button" href="addUser.php" class="btn btn-success mb-3">เพิ่มผู้ใช้งาน</a>
+                      <a type="button" href="addUser.php" class="btn btn-success mb-3"><i class="fa fa-user-plus" aria-hidden="true"></i> เพิ่มผู้ใช้งาน</a>
                       <table class="table border" id="showAllEmployees">
                         <thead>
                           <tr>

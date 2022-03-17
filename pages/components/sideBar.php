@@ -23,9 +23,14 @@
               <i class="fa fa-table" aria-hidden="true"></i> <span class="ms-1 d-none d-sm-inline">จัดการประเภทสินค้า</span></a>
           </li>
           <li>
-          <a href=" manageUsers.php" class="nav-link px-0 align-middle text-white text-decoration-none">
+            <a href="manageStocks.php" class="nav-link px-0 align-middle text-white text-decoration-none">
+              <i class="fa fa-shopping-cart" aria-hidden="true"></i><span class="ms-1 d-none d-sm-inline "> จัดการสต็อค</span></a>
+            </li>
+          <li>
+          <a href="manageUsers.php" class="nav-link px-0 align-middle text-white text-decoration-none">
             <i class="fa fa-user" aria-hidden="true"></i> <span class="ms-1 d-none d-sm-inline ">จัดการผู้ใช้งาน</span></a>
           </li>
+          
           <?php } ?>
         </ul>
         <hr class="venice">
@@ -34,9 +39,9 @@
             <span class="d-none d-sm-inline mx-1"><?php echo $_SESSION['username']; ?></span>
           </a>
           <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
-            <li><a class="dropdown-item" href="editUser.php?id=<?php echo $_SESSION['loginId']; ?>">จัดการบัญชี</a></li>
+            <li><a class="dropdown-item" href="editUser.php?id=<?php echo $_SESSION['loginId']; ?>"><i class="fa fa-cog" aria-hidden="true"></i> จัดการบัญชี</a></li>
           <hr>
-            <li><a class="dropdown-item" href="query/logout.php">ออกจากระบบ</a></li>
+            <li><a class="dropdown-item" href="query/logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i> ออกจากระบบ</a></li>
           </ul>
         </div>
       </div>

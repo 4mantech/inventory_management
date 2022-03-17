@@ -13,13 +13,13 @@ const showAllCategories = () => {
         <tr>
           <td scope="col">${++index}</th>
           <td scope="col">${element.categoryName}</th>
-          <td scope="col">
+          <td scope="col" class="text-center">
             <button type="button" class="btn btn-warning"  onclick="showModalEditCategory(${
               element.id
-            })">แก้ไข</button>
+            })"><i class="fa fa-pencil" aria-hidden="true"></i> แก้ไข</button>
             <button type="button" class="btn btn-danger" onclick="deleteCategory(${
               element.id
-            })">ลบ</button>          
+            })"><i class="fa fa-trash-o" aria-hidden="true"></i> ลบ</button>          
             </td>
         </tr>
         `);

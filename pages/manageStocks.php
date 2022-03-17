@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>จัดการสินค้า</title>
+  <title>จัดการสต็อค</title>
   <?php
   require('../boostrap5css.php');
   require('../boostrap5JS.php');
@@ -13,21 +13,31 @@
 </head>
 
 <body>
-  <!-- Modal -->
-  <div class="modal fade" id="ProductDetailModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="ProductDetailModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-xl">
+
+<div class="modal fade" id="addStockModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="ProductDetailModalLabel">รายละเอียดสินค้า</h5>
-          <button type="button" id="close1" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <h5 class="modal-title" id="exampleModalLongTitle">เพิ่มรายการสินค้า</h5>
         </div>
         <div class="modal-body">
-          <div class="row" id="detail">
+          <div class="row">
+            <div class="col-4">
+            เพิ่มรายการสินค้า
+            </div>
+            <div class="col">
+          <form method="post" enctype="multipart/form-data" id="formSelect">
+            <select class="js-example-basic-multiple" name="select[]" multiple="multiple" style="width:100%" id="select">
+      
+            </select>      
+            </div>
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" id="close2" class="btn btn-danger" data-bs-dismiss="modal">ปิด</button>
+          <button type="button" id="closemodal" data-bs-dismiss="modal" class="btn btn-danger">ยกเลิก</button>
+          <button type="submit" id="confirmAdd" class="btn btn-success" data-bs-dismiss="modal">ยืนยัน</button>
         </div>
+        </form>
       </div>
     </div>
   </div>
@@ -49,32 +59,20 @@
                     </div>
                     <div class="col-10">
                       <div class="text-center mb-2">
-                        <b style="font-size : 20px">แสดงสินค้าทั้งหมด</b>
+                        <b style="font-size : 20px">แสดงสต็อค</b>
+                    
                       </div>
-                      <?php if ($_SESSION['role'] == 0) { ?>
-                        <a type="button" href="addProduct.php" class="btn btn-success mb-3"><i class="fa fa-cart-plus" aria-hidden="true"></i> เพิ่มสินค้า </a>
-                      <?php  } ?>
-                      <div class="row mb-4">
-                        <div class="col-4 text-end">
-                          <h5 for="categoryId">ประเภทสินค้า : </h5>
-                        </div>
-                        <div class="col-4">
-                          <select class="form-select" name="categoryId" id="categoryId">
-                            <option value="all" selected>ทั้งหมด</option>
-                          </select>
-                        </div>
-                      </div>
-                      <table class="table border" id="showAllProd">
+                      <a type="button" class="btn btn-success mb-3" id="addStock"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i>&nbsp;  เพิ่มรายการสินค้า</a>
+                      <table class="table border" id="showStocks">
                         <thead>
                           <tr>
                             <th scope="col">#</th>
                             <th scope="col">ชื่อสินค้า</th>
-                            <th scope="col">ประเภทสินค้า</th>
                             <th scope="col">จำนวน</th>
                             <th class="text-center" scope="col">ดำเนินการ</th>
                           </tr>
                         </thead>
-                        <tbody id="prodTable">
+                        <tbody id="stockBody">
                         </tbody>
                       </table>
                     </div>
@@ -90,6 +88,8 @@
     </div>
   </div>
 </body>
-<script src="ajax/showProducts.js"></script>
+<script src="ajax/configDatatable.js"></script>
+<script src="ajax/manageStocks.js"></script>
+
 
 </html>

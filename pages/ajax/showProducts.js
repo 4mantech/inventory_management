@@ -28,11 +28,11 @@ const showAllProducts = (categoryId) => {
             <td class="text-center" scope="col">
               <button type="button" class="btn btn-info" onclick="showOneProduct(${
                 element.id
-              })">รายละเอียด</button>
+              })"><i class="fa fa-search" aria-hidden="true">&nbsp; </i>รายละเอียด</button>
             `;
           if (userRole == 0) {
-            html += `<a href="editProduct.php?id=${element.id}" type="button" class="btn btn-warning">แก้ไข</a>
-              <button type="button" class="btn btn-danger" onclick="deleteProduct(${element.id})">ลบ</button>`;
+            html += `<a href="editProduct.php?id=${element.id}" type="button" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true">&nbsp; </i>แก้ไข</a>
+              <button type="button" class="btn btn-danger" onclick="deleteProduct(${element.id})"><i class="fa fa-trash-o" aria-hidden="true">&nbsp; </i>ลบ</button>`;
           }
           html += `</td></tr>`;
         });

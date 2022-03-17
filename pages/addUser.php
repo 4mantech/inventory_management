@@ -22,7 +22,7 @@
           <div class="row mt-2" id="mainContents">
             <div class="col-1"></div>
             <div class="col-10">
-              <div class="card p-3 mt-4" style="box-shadow: 0px 5px 5px -2px #888;">
+              <div class="card p-3 mt-4">
                 <div class="card-body" style="background-color: #fff;">
                   <div class="row">
                     <div class="col-1">

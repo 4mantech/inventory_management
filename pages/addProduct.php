@@ -21,7 +21,7 @@
           <div class="row mt-2" id="mainContents">
             <div class="col-1"></div>
             <div class="col-10">
-              <div class="card p-3" style="box-shadow: 0px 5px 5px -2px #888;">
+              <div class="card p-3">
                 <div class="card-body mb-4" style="background-color: #fff;">
                   <a type="button" href="javascript:history.back()" class="btn btn-danger mb-3">ย้อนกลับ</a>
                   <div class="card">

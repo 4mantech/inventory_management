@@ -68,11 +68,12 @@
       <div class="col p-0">
         <!-- As a heading -->
         <?php require_once('components/nav.php') ?>
-        <div class="container-fluid"></div>
+        <div class="container-fluid">
         <div class="row mt-2" id="mainContents">
-          <div class="col-1"></div>
+          <div class="col-1">
+          </div>
           <div class="col-10">
-            <div class="card p-3" style="box-shadow: 0px 5px 5px -2px #888;">
+            <div class="card p-3">
               <div class="card-body" style="background-color: #fff;">
                 <div class="row">
                   <div class="col-2">
@@ -81,13 +82,13 @@
                     <div class="text-center mb-2">
                       <b style="font-size : 20px">แสดงประเภทสินค้า</b>
                     </div>
-                    <button type="button" id="addCategory" class="btn btn-success mb-3">เพิ่มประเภทสินค้า</button>
+                    <button type="button" id="addCategory" class="btn btn-success mb-3"><i class="fa fa-shopping-bag" aria-hidden="true"></i> เพิ่มประเภทสินค้า</button>
                     <table class="table table-hover border" id="showAllCate">
                       <thead>
                         <tr>
                           <th scope="col-2">#</th>
                           <th scope="col-8">ประเภทสินค้า</th>
-                          <th scope="col">ดำเนินการ</th>
+                          <th scope="col" class="text-center">ดำเนินการ</th>
                         </tr>
                       </thead>
                       <tbody id="categoryTable">
@@ -100,6 +101,8 @@
           </div>
         </div>
       </div>
+    </div>
+  </div>
 </body>
 <script src="ajax/showCategories.js"></script>
 

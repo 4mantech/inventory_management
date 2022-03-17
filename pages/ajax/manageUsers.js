@@ -20,10 +20,10 @@ const showAllUsers = () => {
           <td>
           <a href="editUser.php?id=${
             element.id
-          }" type="button" class="btn btn-warning">แก้ไข</a>
+          }" type="button" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true">&nbsp;</i>แก้ไข</a>
           <button class="btn btn-danger" onclick="deleteUser(${
             element.id
-          })">ลบผู้ใช้งาน</button></td>
+          })"><i class="fa fa-trash-o" aria-hidden="true">&nbsp; </i>ลบผู้ใช้งาน</button></td>
          </tr>
         `);
         table = $("#showAllEmployees").dataTable();
