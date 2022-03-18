@@ -3,7 +3,7 @@ $(document).ready(function () {
   showAllProducts("all");
   showAllCategories();
   $("#pageName").text("จัดการสินค้า");
-  const userRole = $("#userRole").val();
+  const userRole = $("#userRole");
 });
 
 const showAllProducts = (categoryId) => {
@@ -24,17 +24,20 @@ const showAllProducts = (categoryId) => {
             <td scope="col">${++index}</td>
             <td scope="col">${element.productName}</td>
             <td scope="col">${element.categoryName}</td>
-            <td scope="col">${element.productQuantity}</td>
+            <td scope="col" class="text-center" style="color:red;">${
+              element.productQuantity
+            }</td>
             <td class="text-center" scope="col">
               <button type="button" class="btn btn-info" onclick="showOneProduct(${
                 element.id
-              })"><i class="fa fa-search" aria-hidden="true">&nbsp; </i>รายละเอียด</button>
+              })"><i class="fa fa-search" aria-hidden="true"></i> รายละเอียด</button>
             `;
-          if (userRole == 0) {
-            html += `<a href="editProduct.php?id=${element.id}" type="button" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true">&nbsp; </i>แก้ไข</a>
-              <button type="button" class="btn btn-danger" onclick="deleteProduct(${element.id})"><i class="fa fa-trash-o" aria-hidden="true">&nbsp; </i>ลบ</button>`;
+          if (userRole.value == 0) {
+            html += `<a href="editProduct.php?id=${element.id}" type="button" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i>แก้ไข</a>
+              <button type="button" class="btn btn-danger" onclick="deleteProduct(${element.id})"><i class="fa fa-trash-o" aria-hidden="true"></i>ลบ</button>`;
           }
-          html += `</td></tr>`;
+          html += `</td>
+          </tr>`;
         });
         $("#prodTable").append(html);
       }
@@ -74,6 +77,7 @@ const deleteProduct = (id) => {
   SoloAlert.confirm({
     title: "ยืนยัน",
     body: "คุณต้องการที่จะลบประเภทสินค้านี้ใช่หรือไม่?",
+    theme: "light",
     useTransparency: true,
     onOk: () => {
       $.ajax({
@@ -185,12 +189,14 @@ $("#categoryId").change(function (e) {
   $("#prodTable").children().remove();
   showAllProducts(e.target.value);
 });
+
 $("#close1").click(function (e) {
   e.preventDefault();
   setTimeout(() => {
     $("#detail").children().remove();
   }, 400);
 });
+
 $("#close2").click(function (e) {
   e.preventDefault();
   setTimeout(() => {

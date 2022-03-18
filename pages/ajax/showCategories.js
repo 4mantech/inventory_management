@@ -175,7 +175,12 @@ $(document).on("click", "#closemodal", function () {
 
 $(document).on("click", "#confirmAdd", function () {
   let categoryName = $("#categoryName").val();
-  addCategory(categoryName);
+  if (categoryName != "") {
+    $("#categoryName").removeClass("is-invalid");
+    addCategory(categoryName);
+  } else {
+    $("#categoryName").addClass("is-invalid");
+  }
 });
 
 $(document).on("click", "#confirmEdit", function () {

@@ -21,8 +21,7 @@ $resultCheck = mysqli_query($conn, $sqlCheck);
 if (mysqli_num_rows($resultCheck) <= 0) {
   if (isset($_FILES['productImage']['name']) && $_FILES['productImage']['name'] != "") {
     $filename = $_FILES['productImage']['name'];
-    $location = "../../assets/images/products/" . $filename;
-    $imageFileType = pathinfo($location, PATHINFO_EXTENSION);
+    $imageFileType = pathinfo($filename, PATHINFO_EXTENSION);
     $imageFileType = strtolower($imageFileType);
 
     $newname = $productName . "." . $imageFileType;

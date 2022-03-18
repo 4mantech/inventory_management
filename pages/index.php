@@ -6,6 +6,9 @@ if (isset($_COOKIE['loginId']) && isset($_COOKIE['role'])) {
   $_SESSION['username'] = $_COOKIE['username'];
   header("Location:main.php");
 }
+if(isset($_SESSION['loginId'])){
+  header("Location:main.php");
+}
 ?>
 
 <!DOCTYPE html>
@@ -37,12 +40,12 @@ if (isset($_COOKIE['loginId']) && isset($_COOKIE['role'])) {
             เข้าสู่ระบบ
           </span>
           <div class="wrap-input100 validate-input" data-validate="กรุณากรอกชื่อผู้ใช้">
-            <input class="input100" type="text" id="username" name="username">
+            <input class="input100" type="text" maxlength="255" id="username" name="username">
             <span class="focus-input100"></span>
             <span class="label-input100">ชื่อผู้ใช้</span>
           </div>
           <div class="wrap-input100 validate-input" data-validate="กรุณากรอกรหัสผ่าน">
-            <input class="input100" type="password" id="password" name="password">
+            <input class="input100" type="password" maxlength="255" id="password" name="password">
             <span class="focus-input100"></span>
             <span class="label-input100">รหัสผ่าน</span>
           </div>

@@ -1,3 +1,6 @@
+<?php 
+require('query/checkLogin.php'); 
+?>
 <!DOCTYPE html>
 <html lang="en">
 

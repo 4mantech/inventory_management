@@ -72,7 +72,7 @@ const showSelect = (data) => {
             <td class="text-center" scope="col"> 
               <button type="button" class="btn btn-warning" onclick="cutStock(${
                 element.id
-              })"><i class="fa fa-scissors" aria-hidden="true">&nbsp; ตัดสต็อค</i></button>
+              })"><i class="fa fa-scissors" aria-hidden="true"></i> ตัดสต็อค</button>
             </td>
           </tr>   
           `);

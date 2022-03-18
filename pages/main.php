@@ -1,3 +1,6 @@
+<?php 
+require('query/checkLogin.php'); 
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -51,7 +54,7 @@
                         <b style="font-size : 20px">แสดงสินค้าที่เหลือน้อย</b>
                       </div>
                       <?php if ($_SESSION['role'] == 0) { ?>
-                        <a type="button" href="addProduct.php" class="btn btn-success mb-3"><i class="fa fa-user-plus" aria-hidden="true"></i>เพิ่มสินค้า</a>
+                        <a type="button" href="addProduct.php" class="btn btn-success mb-3"><i class="fa fa-cart-plus" aria-hidden="true"></i> เพิ่มสินค้า</a>
                       <?php } ?>
                       <div class="row mb-4">
                         <div class="col-4 text-end">

@@ -1,3 +1,9 @@
+<?php 
+require('query/checkLogin.php'); 
+if($_SESSION['role'] !=0){
+  header("Location:main.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,8 +36,8 @@
             <div class="col">
             <form enctype="multipart/form-data"  id="changePasswordForm">
             <input type="hidden" name="userId" id="userId" value="<?php echo $_GET['id']; ?>">
-              <input class="form-control mb-3" type="text" id="newPassword" minlength="8" name="newPassword" placeholder="รหัสผ่านใหม่" required>
-              <input class="form-control" type="text" id="confirmPassword" minlength="8"  name="confirmPassword" placeholder="ยืนยันรหัสผ่าน" required>
+              <input class="form-control mb-3" type="password" id="newPassword" minlength="8" name="newPassword" placeholder="รหัสผ่านใหม่" required>
+              <input class="form-control" type="password" id="confirmPassword" minlength="8"  name="confirmPassword" placeholder="ยืนยันรหัสผ่าน" required>
             </div>
           </div>
         </div>
@@ -72,7 +78,7 @@
                               <label>Username</label>
                               <div class="row">
                                 <div class="col">
-                                  <input type="text" class="form-control" id="username" name="username" placeholder="กรอกชื่อผู้ใช้" readonly>
+                                  <input type="text" class="form-control" id="username" maxlength="255" name="username" placeholder="กรอกชื่อผู้ใช้" readonly>
                                   <div class="valid-feedback">
                                   </div>
                                   <div class="invalid-feedback">
@@ -85,7 +91,7 @@
                               <label>ชื่อจริง</label>
                               <div class="row">
                                 <div class="col">
-                                  <input type="text" class="form-control" id="firstname" name="firstname" placeholder="กรอกชื่อจริง" required>
+                                  <input type="text" class="form-control" id="firstname" maxlength="255" name="firstname" placeholder="กรอกชื่อจริง" required>
                                   <div class="valid-feedback">
                                   </div>
                                   <div class="invalid-feedback">
@@ -96,7 +102,7 @@
                             </div>
                             <div class="col-12">
                               <label>นามสกุล</label>
-                              <input type="text" class="form-control" id="lastname" name="lastname" placeholder="กรอกนามสกุล" required>
+                              <input type="text" class="form-control" maxlength="255" id="lastname" name="lastname" placeholder="กรอกนามสกุล" required>
                               <div class="valid-feedback">
                               </div>
                               <div class="invalid-feedback">
@@ -107,7 +113,7 @@
                               <label>อีเมล</label>
                               <div class="row">
                                 <div class="col">
-                                  <input type="email" class="form-control" id="email" name="email" placeholder="example@email.com" required>
+                                  <input type="email" class="form-control" maxlength="255" id="email" name="email" placeholder="example@email.com" required>
                                   <div class="valid-feedback">
                                   </div>
                                   <div class="invalid-feedback">
@@ -118,7 +124,7 @@
                             </div>
                             <div class="col-12">
                               <label>เบอร์โทรศัพท์</label>
-                              <input type="text" class="form-control" id="tel" name="tel" placeholder="กรอกหมายเลขโทรศัพท์" onkeypress='return event.charCode >= 48 && event.charCode <= 57' required>
+                              <input type="text" class="form-control" maxlength="255" id="tel" name="tel" placeholder="กรอกหมายเลขโทรศัพท์" onkeypress='return event.charCode >= 48 && event.charCode <= 57' required>
                               <div class="valid-feedback">
                                 </div>
                                 <div class="invalid-feedback">
@@ -127,7 +133,6 @@
                               </div>
                             </div>
                             <div class="text-end">
-                              
                             <button type="button" class="btn btn-warning mb-3" data-bs-toggle="modal" data-bs-target="#changePasswordModal"><i class="fa fa-key" aria-hidden="true"></i> เปลียนรหัสผ่าน</button>
                             </div>
                       </div>

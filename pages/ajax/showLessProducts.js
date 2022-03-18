@@ -31,14 +31,13 @@ const showLessProduct = (categoryId) => {
                 element.id
               })"><i class="fa fa-search" aria-hidden="true"></i> รายละเอียด</button>
             `;
-          if (userRole == 0) {
+          if (userRole.value == 0) {
             html += `<a href="editProduct.php?id=${element.id}" type="button" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i>แก้ไข</a>
               <button type="button" class="btn btn-danger" onclick="deleteProduct(${element.id})"><i class="fa fa-trash-o" aria-hidden="true"></i>ลบ</button>`;
           }
           html += `</td>
           </tr>`;
         });
-        console.log(html);
         $("#LessTable").append(html);
       }
       $("#showLessProduct").dataTable({

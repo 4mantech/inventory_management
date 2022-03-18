@@ -1,3 +1,6 @@
+<?php 
+require('query/checkLogin.php'); 
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,7 +22,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="ProductDetailModalLabel">รายละเอียดสินค้า</h5>
-          <button type="button" id="close1" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <button type="button" id="close1"  class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
           <div class="row" id="detail">

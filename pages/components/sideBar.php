@@ -1,4 +1,3 @@
-<?php require('query/checkLogin.php'); ?>
     <!-- sidebar -->
     <input type="hidden" name="userRole" id="userRole" value="<?php echo $_SESSION['role']; ?>">
     <input type="hidden" name="loginId" id="loginId" value="<?php echo $_SESSION['loginId']; ?>">

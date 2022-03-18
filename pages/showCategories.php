@@ -1,3 +1,9 @@
+<?php 
+require('query/checkLogin.php'); 
+if($_SESSION['role'] !=0){
+  header("Location:main.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,12 +31,12 @@
               เพิ่มประเภท
             </div>
             <div class="col">
-              <input class="form-control" type="text" id="categoryName" name="categoryName" placeholder="ประเภทสินค้า" required>
+              <input class="form-control" type="text" maxlength="255" id="categoryName"  name="categoryName" placeholder="ประเภทสินค้า" required>
             </div>
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" id="closemodal" data-mdb-dismiss="modal" class="btn btn-danger">ยกเลิก</button>
+          <button type="button" id="closemodal" data-bs-dismiss="modal" class="btn btn-danger">ยกเลิก</button>
           <button type="button" id="confirmAdd" class="btn btn-success">ยืนยัน</button>
         </div>
       </div>
@@ -50,12 +56,12 @@
             </div>
             <div class="col">
               <input class="form-control" type="hidden" id="categoryId" name="categoryId">
-              <input class="form-control" type="text" id="categoryNameForEdit" name="categoryNameForEdit" placeholder="ประเภทสินค้า" required>
+              <input class="form-control" type="text" id="categoryNameForEdit" name="categoryNameForEdit" maxlength="255" placeholder="ประเภทสินค้า" required>
             </div>
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" id="closeModalEdit" data-mdb-dismiss="modal" class="btn btn-danger">ยกเลิก</button>
+          <button type="button" id="closeModalEdit" data-bs-dismiss="modal" class="btn btn-danger">ยกเลิก</button>
           <button type="button" id="confirmEdit" class="btn btn-success">ยืนยัน</button>
         </div>
       </div>
