@@ -45,7 +45,7 @@ const deleteUser = (id) => {
           id: id,
         },
         success: function (data) {
-          const { status } = JSON.perse(data);
+          const { status } = JSON.parse(data);
           if (status == "true") {
             SoloAlert.alert({
               title: "สำเร็จ",
@@ -53,9 +53,9 @@ const deleteUser = (id) => {
               icon: "success",
               useTransparency: true,
               onOk: () => {
-                $("#showAllUser").DataTable().destroy();
-                $("#UserTable").children().remove();
-                showAllCategories();
+                $("#showAllEmployees").DataTable().destroy();
+                $("#empTable").children().remove();
+                showAllUsers();
               },
             });
           } else {

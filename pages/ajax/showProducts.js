@@ -24,9 +24,7 @@ const showAllProducts = (categoryId) => {
             <td scope="col">${++index}</td>
             <td scope="col">${element.productName}</td>
             <td scope="col">${element.categoryName}</td>
-            <td scope="col" class="text-center" style="color:red;">${
-              element.productQuantity
-            }</td>
+            <td scope="col" class="text-center">${element.productQuantity}</td>
             <td class="text-center" scope="col">
               <button type="button" class="btn btn-info" onclick="showOneProduct(${
                 element.id
@@ -98,7 +96,7 @@ const deleteProduct = (id) => {
               onOk: () => {
                 $("#showAllProd").DataTable().destroy();
                 $("#prodTable").children().remove();
-                showAllProducts();
+                showAllProducts("all");
               },
             });
           } else {

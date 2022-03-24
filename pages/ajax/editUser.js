@@ -14,6 +14,15 @@ $("#changePasswordForm").submit(function (e) {
     changePassword(data);
   }
 });
+
+$("#newPassword").keyup(function () {
+  $("#newPassword").removeClass("is-invalid");
+});
+
+$("#confirmPassword").keyup(function () {
+  $("#confirmPassword").removeClass("is-invalid");
+});
+
 const showUser = (id) => {
   $.ajax({
     type: "GET",
