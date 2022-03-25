@@ -31,7 +31,7 @@ if($_SESSION['role'] !=0){
               เพิ่มประเภท
             </div>
             <div class="col">
-              <input class="form-control" type="text" maxlength="255" id="categoryName"  name="categoryName" placeholder="ประเภทสินค้า" required>
+              <input class="form-control" type="text" pattern="\S+" maxlength="255" id="categoryName"  name="categoryName" placeholder="ประเภทสินค้า" required>
             </div>
           </div>
         </div>
@@ -55,8 +55,8 @@ if($_SESSION['role'] !=0){
               แก้ไขประเภทสินค้า
             </div>
             <div class="col">
-              <input class="form-control" type="hidden" id="categoryId" name="categoryId">
-              <input class="form-control" type="text" id="categoryNameForEdit" name="categoryNameForEdit" maxlength="255" placeholder="ประเภทสินค้า" required>
+              <input class="form-control" pattern="\S+" type="hidden" id="categoryId" name="categoryId">
+              <input class="form-control" pattern="\S+" type="text" id="categoryNameForEdit" name="categoryNameForEdit" maxlength="255" placeholder="ประเภทสินค้า" required>
             </div>
           </div>
         </div>

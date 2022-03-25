@@ -78,7 +78,7 @@ if($_SESSION['role'] !=0){
                               <label>Username</label>
                               <div class="row">
                                 <div class="col">
-                                  <input type="text" class="form-control" id="username" maxlength="255" name="username" placeholder="กรอกชื่อผู้ใช้" readonly>
+                                  <input type="text" class="form-control" id="username" maxlength="255" name="username" pattern="\S+" placeholder="กรอกชื่อผู้ใช้" readonly>
                                   <div class="valid-feedback">
                                   </div>
                                   <div class="invalid-feedback">
@@ -91,7 +91,7 @@ if($_SESSION['role'] !=0){
                               <label>ชื่อจริง</label>
                               <div class="row">
                                 <div class="col">
-                                  <input type="text" class="form-control" id="firstname" maxlength="255" name="firstname" placeholder="กรอกชื่อจริง" required>
+                                  <input type="text" class="form-control" id="firstname" maxlength="255" name="firstname"  pattern="\S+" placeholder="กรอกชื่อจริง" required>
                                   <div class="valid-feedback">
                                   </div>
                                   <div class="invalid-feedback">
@@ -102,7 +102,7 @@ if($_SESSION['role'] !=0){
                             </div>
                             <div class="col-12">
                               <label>นามสกุล</label>
-                              <input type="text" class="form-control" maxlength="255" id="lastname" name="lastname" placeholder="กรอกนามสกุล" required>
+                              <input type="text" class="form-control" maxlength="255" id="lastname" name="lastname" pattern="\S+" placeholder="กรอกนามสกุล" required>
                               <div class="valid-feedback">
                               </div>
                               <div class="invalid-feedback">
@@ -113,7 +113,7 @@ if($_SESSION['role'] !=0){
                               <label>อีเมล</label>
                               <div class="row">
                                 <div class="col">
-                                  <input type="email" class="form-control" maxlength="255" id="email" name="email" placeholder="example@email.com" required>
+                                  <input type="email" class="form-control" maxlength="255" id="email" name="email" pattern="\S+" placeholder="example@email.com" required>
                                   <div class="valid-feedback">
                                   </div>
                                   <div class="invalid-feedback">
@@ -124,7 +124,7 @@ if($_SESSION['role'] !=0){
                             </div>
                             <div class="col-12">
                               <label>เบอร์โทรศัพท์</label>
-                              <input type="text" class="form-control" maxlength="255" id="tel" name="tel" placeholder="กรอกหมายเลขโทรศัพท์" onkeypress='return event.charCode >= 48 && event.charCode <= 57' required>
+                              <input type="text" class="form-control" maxlength="255" id="tel" name="tel" pattern="\S+" placeholder="กรอกหมายเลขโทรศัพท์" onkeypress='return event.charCode >= 48 && event.charCode <= 57' required>
                               <div class="valid-feedback">
                                 </div>
                                 <div class="invalid-feedback">

@@ -78,6 +78,7 @@ const showSelect = (data) => {
           `);
         });
         $("#showStocks").dataTable(config);
+
         $("#showStocks").show();
       }
     },

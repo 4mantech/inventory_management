@@ -175,7 +175,7 @@ $(document).on("click", "#closemodal", function () {
 
 $(document).on("click", "#confirmAdd", function () {
   let categoryName = $("#categoryName").val();
-  if (categoryName != "") {
+  if (categoryName.trim() != "") {
     $("#categoryName").removeClass("is-invalid");
     addCategory(categoryName);
   } else {

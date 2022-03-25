@@ -38,7 +38,7 @@ if($_SESSION['role'] !=0){
                             <label for="previewcategory">ชื่อสินค้า</label>
                             <div class="row">
                               <div class="col">
-                                <input type="text" class="form-control" maxlength="100" id="productName" name="productName" required>
+                                <input type="text" class="form-control" pattern="\S+" maxlength="100" id="productName" name="productName" required>
                                 <div class="valid-feedback">
                                 </div>
                                 <div class="invalid-feedback">
@@ -66,7 +66,7 @@ if($_SESSION['role'] !=0){
                         <div class="form-group row mt-2">
                           <div class="col-4">
                             <label for="previewmodel">ขนาด</label>
-                            <input type="text" class="form-control" maxlength="255" id="size" name="size" placeholder="กว้างxยาวxสูง" required>
+                            <input type="text" class="form-control" pattern="\S+" maxlength="255" id="size" name="size" placeholder="กว้างxยาวxสูง" required>
                             <div class="valid-feedback">
                             </div>
                             <div class="invalid-feedback">
@@ -75,7 +75,7 @@ if($_SESSION['role'] !=0){
                           </div>
                           <div class="col-4">
                             <label for="previewmodel">สี</label>
-                            <input type="text" class="form-control" maxlength="255" id="color" name="color" required>
+                            <input type="text" class="form-control" pattern="\S+" maxlength="255" id="color" name="color" required>
                             <div class="valid-feedback">
                             </div>
                             <div class="invalid-feedback">
@@ -84,7 +84,7 @@ if($_SESSION['role'] !=0){
                           </div>
                           <div class="col-4">
                             <label for="previewmodel">จำนวน</label>
-                            <input type="number" class="form-control" id="productQuantity" min="1" max="999999" name="productQuantity" onkeypress='return event.charCode >= 48 && event.charCode <= 57' required>
+                            <input type="number" class="form-control" pattern="\S+" id="productQuantity" min="1" max="999999" name="productQuantity" onkeypress='return event.charCode >= 48 && event.charCode <= 57' required>
                             <div class="valid-feedback">
                             </div>
                             <div class="invalid-feedback">
@@ -96,7 +96,7 @@ if($_SESSION['role'] !=0){
                         <div class="form-group row mt-2">
                           <div class="col">
                             <label for="productdetail" class="form-label">รายละเอียดสินค้า (เพิ่มเติม)</label>
-                            <textarea class="form-control" maxlength="255" id="productDetail" name="productDetail" required></textarea>
+                            <textarea class="form-control" pattern="\S+" maxlength="255" id="productDetail" name="productDetail" required></textarea>
                             <div class="valid-feedback">
                             </div>
                             <div class="invalid-feedback">
