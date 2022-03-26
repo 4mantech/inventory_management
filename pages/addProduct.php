@@ -52,7 +52,7 @@ if($_SESSION['role'] !=0){
                             <div class="row">
                               <div class="col">
                                 <select class="form-select js-example-basic-single" id="categoryId" name="categoryId" required>
-                                  <option selected disabled value="">Choose...</option>
+                                  <option selected disabled value="">เลือก</option>
                                 </select>
                                 <div class="valid-feedback">
                                 </div>
