@@ -13,33 +13,7 @@
 </head>
 
 <body>
-  <input type="text" name="test" id="test">
-  <button type="button" id="submit">บันทึก</button>
 
-  <script>
-  $(document).ready(function() {
-    const Perth = () => {
-      let test = $("#test").val()
-      $.ajax({
-        type: "POST"
-        url: "testgot2.php"
-        data: {
-          test: test
-        },
-        success: function(data) {
-          Swal.fire({
-            icon: 'success',
-            title: 'สำเร็จ',
-            text: data,
-          })
-        },
-      });
-    };
-    $("#submit").click(function() {
-      Perth()
-    });
-  });
-  </script>
 
 </body>
 
