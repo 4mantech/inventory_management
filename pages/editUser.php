@@ -1,8 +1,8 @@
 <?php 
 require('query/checkLogin.php'); 
-if($_SESSION['role'] !=0){
-  header("Location:main.php");
-}
+// if($_SESSION['role'] !=0){
+//   header("Location:main.php");
+// }
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -38,7 +38,7 @@
             <span class="d-none d-sm-inline mx-1"><?php echo $_SESSION['username']; ?></span>
           </a>
           <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
-            <li><a class="dropdown-item" href="editUser.php?id=<?php echo $_SESSION['loginId']; ?>"><i class="fa fa-cog" aria-hidden="true"></i> จัดการบัญชี</a></li>
+            <li><a class="dropdown-item" href="editUser.php?id=<?php echo $_SESSION['loginId']; ?>"><i class="fa fa-cog" aria-hidden="true"></i>จัดการบัญชี</a></li>
           <hr>
             <li><a class="dropdown-item" href="query/logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i> ออกจากระบบ</a></li>
           </ul>
