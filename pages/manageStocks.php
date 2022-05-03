@@ -76,6 +76,7 @@ require('query/checkLogin.php');
                           </tr>
                         </thead>
                         <tbody id="stockBody">
+                          
                         </tbody>
                       </table>
                     </div>
