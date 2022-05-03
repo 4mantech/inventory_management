@@ -55,14 +55,14 @@ const showSelect = (data) => {
     contentType: false,
     cache: false,
     success: function (response) {
+      $("#showStocks").DataTable().destroy();
+      $("#stockBody").children().remove();
       const { selectObj } = JSON.parse(response);
       if (selectObj == null) {
-        $("#stockBody").children().remove()
-        $("#showStocks").DataTable().destroy();
-        // $("#stockBody").append(`
-        //   <tr>
-        //   <td colspan="4" class="text-center">กรุณาเพิ่มสินค้า</td>
-        //   </tr>  `);
+        $("#stockBody").append(`
+          <tr>
+          <td colspan="4" class="text-center">กรุณาเพิ่มสินค้า</td>
+          </tr>  `);
       } else {
         selectObj.forEach((element, index) => {
           $("#stockBody").append(`
@@ -78,9 +78,10 @@ const showSelect = (data) => {
           </tr>   
           `);
         });
-        $("#showStocks").DataTable(config);
+         $("#showStocks").DataTable();
         $("#showStocks").show();
       }
     },
   });
 };
+
