@@ -1,5 +1,7 @@
+const dataStock = [];
+
 $(document).ready(function () {
-  $("#showStocks").hide();
+  $("#showStocks").DataTable();
   showProducts();
   $("#addStock").click(function () {
     $("#addStockModal").modal("show");
@@ -8,6 +10,45 @@ $(document).ready(function () {
     dropdownParent: $("#addStockModal"),
   });
   $("#pageName").text("จัดการสต็อค");
+
+  $("#cutStockButton").click(function (e) {
+    e.preventDefault();
+
+    $("#showStocks tr")
+      .not(":first")
+      .each(function () {
+        let data2 = {
+          id: $(this).find("td:eq(0)").text(),
+          total: $(this).find("td:eq(2)").text(),
+          amount: $(this).find("td:eq(3) :input").val(),
+        };
+        dataStock.push(data2);
+      });
+    let jsonDataStock = { dataStock: dataStock };
+    SoloAlert.confirm({
+      title: "ยืนยันการตัดสต็อค",
+      // body: "ฮัลโหลเวิน",
+      useTransparency: true,
+      onOk: () => {
+        $.ajax({
+          type: "POST",
+          url: "query/cutStock.php",
+          data: {
+            jsonDataStock,
+          },
+          success: function (response) {
+            const { status, message } = JSON.parse(response);
+            if (status == "true") {
+              alert(message);
+            } else {
+              alert(message);
+            }
+            dataStock.length = 0;
+          },
+        });
+      },
+    });
+  });
 });
 
 const showProducts = () => {
@@ -58,30 +99,25 @@ const showSelect = (data) => {
       $("#showStocks").DataTable().destroy();
       $("#stockBody").children().remove();
       const { selectObj } = JSON.parse(response);
-      if (selectObj == null) {
-        $("#stockBody").append(`
-          <tr>
-          <td colspan="4" class="text-center">กรุณาเพิ่มสินค้า</td>
-          </tr>  `);
-      } else {
-        selectObj.forEach((element, index) => {
+      dataStock.length = 0;
+      if (selectObj != null) {
+        selectObj.forEach((element) => {
           $("#stockBody").append(`
           <tr>
-            <td scope="col">${++index}</td>
+            <td scope="col">${element.id}</td>
             <td scope="col">${element.productName}</td>
             <td scope="col">${element.productQuantity}</td>
             <td class="text-center" scope="col"> 
-              <button type="button" class="btn btn-warning" onclick="cutStock(${
-                element.id
-              })"><i class="fa fa-scissors" aria-hidden="true"></i> ตัดสต็อค</button>
+              <input type="number" class="form-control" min="1" value="1" max="${element.productQuantity}"></input>
             </td>
           </tr>   
           `);
         });
-         $("#showStocks").DataTable();
-        $("#showStocks").show();
       }
+      $("#showStocks").DataTable();
+      // let test = [];
+
+      console.log(dataStock);
     },
   });
 };
-

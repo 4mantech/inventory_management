@@ -69,16 +69,19 @@ require('query/checkLogin.php');
                       <table class="table border" id="showStocks">
                         <thead>
                           <tr>
-                            <th scope="col">#</th>
+                            <th scope="col">รหัสสินค้า</th>
                             <th scope="col">ชื่อสินค้า</th>
                             <th scope="col">จำนวน</th>
-                            <th class="text-center" scope="col">ดำเนินการ</th>
+                            <th class="text-center" scope="col">จำนวนตัดสต็อก</th>
                           </tr>
                         </thead>
                         <tbody id="stockBody">
                           
                         </tbody>
                       </table>
+                      <div class="text-end">
+                        <button class="btn btn-warning mt-3" id="cutStockButton">ตัดสต็อค</button>
+                      </div>
                     </div>
                     <div class="col-1">
                     </div>
