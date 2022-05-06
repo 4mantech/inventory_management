@@ -65,14 +65,14 @@ require('query/checkLogin.php');
                         <b style="font-size : 20px">แสดงสต็อค</b>
                     
                       </div>
-                      <a type="button" class="btn btn-success mb-3" id="addStock"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i>&nbsp;  เพิ่มรายการสินค้า</a>
+                      <a type="button" class="btn btn-primary mb-3" id="addStock"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i>&nbsp;  เพิ่มรายการสินค้า</a>
                       <table class="table border" id="showStocks">
                         <thead>
                           <tr>
                             <th scope="col">รหัสสินค้า</th>
                             <th scope="col">ชื่อสินค้า</th>
-                            <th scope="col">จำนวน</th>
-                            <th class="text-center" scope="col">จำนวนตัดสต็อก</th>
+                            <th scope="col">จำนวนคงเหลือ</th>
+                            <th class="text-center" scope="col">จำนวน</th>
                           </tr>
                         </thead>
                         <tbody id="stockBody">
@@ -80,7 +80,8 @@ require('query/checkLogin.php');
                         </tbody>
                       </table>
                       <div class="text-end">
-                        <button class="btn btn-warning mt-3" id="cutStockButton">ตัดสต็อค</button>
+                        <button class="btn btn-success mt-3" disabled="true" id="addStockButton">เติมสต็อค</button>
+                        <button class="btn btn-warning mt-3" disabled="true" id="cutStockButton">ตัดสต็อค</button>
                       </div>
                     </div>
                     <div class="col-1">
