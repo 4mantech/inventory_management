@@ -35,7 +35,7 @@ if($_SESSION['role'] !=0){
             </div>
             <div class="col">
             <input class="form-control mb-4" type="text" pattern="\S+" maxlength="255" id="reportNumber"  name="reportNumber" placeholder="เลขที่คำสั่งซื้อ" required>
-            <input class="form-control mb-4" type="file" id="file" name="file" accept="image/png, image/jpeg, image/jpg, .pdf" required>
+            <input class="form-control mb-4" type="file" id="file" name="file" accept="image/png, image/jpeg, image/jpg" required>
             <input class="form-control" type="datetime-local" id="datetime" name="datetime" required>                    
             </div>
           </div>
