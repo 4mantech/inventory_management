@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.1.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 10, 2022 at 09:27 AM
--- Server version: 10.4.21-MariaDB
--- PHP Version: 7.3.30
+-- Generation Time: May 09, 2022 at 04:07 PM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 7.4.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -70,9 +70,36 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `categoryId`, `productName`, `productDetail`, `size`, `color`, `productImage`, `productQuantity`) VALUES
-(12, 47, 'ทดสอบ', 'อิอิ', '1*2*3', 'แดง', 'noProductImage.jpg', 32),
-(16, 47, 'ชื่อสินนค้าasd', '6666', 'asdasd', 'แดง', 'noProductImage.jpg', 55),
-(17, 63, 'สวัสดีน้าบ', 'ddddddd', '50x50x50', 'แดง', 'สวัสดีน้าบ.jpg', 69);
+(12, 47, 'ทดสอบ', 'อิอิ', '1*2*3', 'แดง', 'noProductImage.jpg', 1330),
+(16, 47, 'ชื่อสินนค้าasd', '6666', 'asdasd', 'แดง', 'noProductImage.jpg', 512),
+(17, 63, 'สวัสดีน้าบ', 'ddddddd', '50x50x50', 'แดง', 'สวัสดีน้าบ.jpg', 167);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `reports`
+--
+
+CREATE TABLE `reports` (
+  `id` int(11) NOT NULL,
+  `orderNumber` varchar(100) NOT NULL,
+  `imageName` text NOT NULL,
+  `dateTime` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `reports`
+--
+
+INSERT INTO `reports` (`id`, `orderNumber`, `imageName`, `dateTime`) VALUES
+(10, '4314134', '4314134.jpg', '2022-05-20 13:13:00'),
+(16, 'vfvfvf', 'vfvfvf.jpg', '2022-05-09 11:23:00'),
+(31, 'DramaStream', 'DramaStream.jpg', '2022-05-09 13:09:00'),
+(42, 'alex', 'alex.jpg', '2022-05-09 13:38:00'),
+(43, '54252455245245425245', '54252455245245425245.jpg', '2022-05-14 13:39:00'),
+(45, 'DramaStream1', 'DramaStream1.png', '2022-05-09 13:50:00'),
+(46, 'handsome', 'handsome.jpg', '2022-05-09 13:58:00'),
+(47, 'ขี้แตก', 'ขี้แตก.jpg', '2022-05-09 13:59:00');
 
 -- --------------------------------------------------------
 
@@ -118,6 +145,13 @@ ALTER TABLE `products`
   ADD KEY `fk_category_id` (`categoryId`);
 
 --
+-- Indexes for table `reports`
+--
+ALTER TABLE `reports`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `orderNumber` (`orderNumber`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -140,6 +174,12 @@ ALTER TABLE `categories`
 --
 ALTER TABLE `products`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+
+--
+-- AUTO_INCREMENT for table `reports`
+--
+ALTER TABLE `reports`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
 -- AUTO_INCREMENT for table `users`
