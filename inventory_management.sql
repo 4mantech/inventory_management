@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.3
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 09, 2022 at 04:07 PM
--- Server version: 10.4.22-MariaDB
--- PHP Version: 7.4.28
+-- Generation Time: May 09, 2022 at 04:35 PM
+-- Server version: 10.4.21-MariaDB
+-- PHP Version: 8.0.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -37,16 +37,8 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id`, `categoryName`) VALUES
-(54, '1234'),
-(21, 'asdasd'),
-(47, 'dasdasd'),
-(48, 'dasdddd'),
-(52, 'dd'),
-(46, 'ddd'),
-(63, 'helloWorld ค้าบ'),
-(61, 'ป๋อมแป๋ม'),
-(62, 'สวัสดีจ้า'),
-(57, 'อปปป');
+(21, 'test1'),
+(54, 'test2');
 
 -- --------------------------------------------------------
 
@@ -65,15 +57,6 @@ CREATE TABLE `products` (
   `productQuantity` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `products`
---
-
-INSERT INTO `products` (`id`, `categoryId`, `productName`, `productDetail`, `size`, `color`, `productImage`, `productQuantity`) VALUES
-(12, 47, 'ทดสอบ', 'อิอิ', '1*2*3', 'แดง', 'noProductImage.jpg', 1330),
-(16, 47, 'ชื่อสินนค้าasd', '6666', 'asdasd', 'แดง', 'noProductImage.jpg', 512),
-(17, 63, 'สวัสดีน้าบ', 'ddddddd', '50x50x50', 'แดง', 'สวัสดีน้าบ.jpg', 167);
-
 -- --------------------------------------------------------
 
 --
@@ -86,20 +69,6 @@ CREATE TABLE `reports` (
   `imageName` text NOT NULL,
   `dateTime` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `reports`
---
-
-INSERT INTO `reports` (`id`, `orderNumber`, `imageName`, `dateTime`) VALUES
-(10, '4314134', '4314134.jpg', '2022-05-20 13:13:00'),
-(16, 'vfvfvf', 'vfvfvf.jpg', '2022-05-09 11:23:00'),
-(31, 'DramaStream', 'DramaStream.jpg', '2022-05-09 13:09:00'),
-(42, 'alex', 'alex.jpg', '2022-05-09 13:38:00'),
-(43, '54252455245245425245', '54252455245245425245.jpg', '2022-05-14 13:39:00'),
-(45, 'DramaStream1', 'DramaStream1.png', '2022-05-09 13:50:00'),
-(46, 'handsome', 'handsome.jpg', '2022-05-09 13:58:00'),
-(47, 'ขี้แตก', 'ขี้แตก.jpg', '2022-05-09 13:59:00');
 
 -- --------------------------------------------------------
 
@@ -123,8 +92,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `role`, `firstName`, `lastName`, `email`, `tel`) VALUES
-(2, 'admin', '5fb7b875c508202d964fbaafe213665b5bc210fd9fa1f23eac41d2b227ebe351', 0, 'เวนิส', 'test', 'admin@gmail.com', '0655899874'),
-(4, 'kantapat', '5fb7b875c508202d964fbaafe213665b5bc210fd9fa1f23eac41d2b227ebe351', 1, 'kantapat', 'supaweerawat', 'kantapat@mail.com', '0987290448');
+(2, 'admin', '5fb7b875c508202d964fbaafe213665b5bc210fd9fa1f23eac41d2b227ebe351', 0, 'admin', 'admin', 'admin@gmail.com', '0655899874'),
+(4, 'user', '5fb7b875c508202d964fbaafe213665b5bc210fd9fa1f23eac41d2b227ebe351', 1, 'user', 'user', 'user@mail.com', '0927290448');
 
 --
 -- Indexes for dumped tables
