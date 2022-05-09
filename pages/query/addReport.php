@@ -1,7 +1,7 @@
 <?php
 require_once('connect.php');
 
-$reportNumber = $_POST['reportNumber'];
+$reportNumber = trim($_POST['reportNumber']);
 $datetime = $_POST['datetime'];
 
 if (isset($_FILES['file']['name']) && $_FILES['file']['name'] != "") {
@@ -15,9 +15,6 @@ if (isset($_FILES['file']['name']) && $_FILES['file']['name'] != "") {
 
   $valid_extensions = array("jpg", "jpeg", "png");
 
-  if (in_array(strtolower($imageFileType), $valid_extensions)) {
-    move_uploaded_file($_FILES['file']['tmp_name'], $location);
-  }
 }else{
   $newname = "noImage.jpg";
 }
@@ -30,10 +27,16 @@ VALUES
  ('$reportNumber',
  '$newname',
  '$datetime')";
+
 if (mysqli_query($conn, $sql)) {
-  echo json_encode(array("status" => "true"), JSON_UNESCAPED_UNICODE);
+  echo json_encode(array("status" => "true"),JSON_UNESCAPED_UNICODE);
+  // try{
+    if (in_array(strtolower($imageFileType), $valid_extensions)) {
+      move_uploaded_file($_FILES['file']['tmp_name'], $location);
+    }
+  // }
 } else {
-echo json_encode(array("status" => "false", "message" => "ไม่สามารถเพิ่มได้"), JSON_UNESCAPED_UNICODE);
-mysqli_close($conn);
+  echo json_encode(array("status" => "false", "message" => "ไม่สามารถเพิ่มได้"), JSON_UNESCAPED_UNICODE);
 }
+mysqli_close($conn);
 ?>

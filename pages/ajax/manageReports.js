@@ -1,5 +1,6 @@
 $(document).ready(() => {
   showReports();
+  $("#pageName").text("รายงานสรุปการสั่งซื้อสินค้า");
 
   $("#formAddReport").submit((e)=>{
     e.preventDefault();
@@ -43,6 +44,7 @@ $(document).ready(() => {
 
   $("#addReport").click(()=>{
     $("#addReportModal").modal('show');
+    $("#formAddReport").trigger("reset");
   })
 
 });
@@ -64,7 +66,7 @@ const showReports = () => {
             <tr>
               <td>${++index}</td>
               <td>${element.orderNumber}</td>
-              <td><img src="../assets/images/reports/${element.imageName}" style="height:100px;width:auto;cursor:pointer;" onclick="showImage('${element.imageName}')"></td>
+              <td><img src="../assets/images/reports/${element.imageName}" style="height:120px;width:100px;cursor:pointer;" onclick="showImage('${element.imageName}')"></td>
               <td>${element.dateTime}</td>
               <td>
                 <button class="btn btn-danger" onclick="deleteReport(${

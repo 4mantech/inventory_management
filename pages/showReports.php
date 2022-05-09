@@ -17,10 +17,10 @@ if($_SESSION['role'] !=0){
   require('../boostrap5JS.php');
   ?>
 </head>
-
 <body>
-<div class="modal fade" id="addReportModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
+  
+  <div class="modal fade" id="addReportModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLongTitle">เพิ่มใบคำสั่งซื้อ</h5>
@@ -28,15 +28,29 @@ if($_SESSION['role'] !=0){
         <div class="modal-body">
         <form method="POST" enctype="multipart/form-data" id="formAddReport">
           <div class="row">
-            <div class="col-3">
-              <label class="mb-5">เลขที่คำสั่งซื้อ</label>
-              <label class="mb-4">เพิ่มใบคำสั่งซื้อ</label>
-              <label class="mt-2">วันที่สั่งซื้อ</label>
+            <div class="row">
+              <div class="col-3">
+                <p class="mb-4">เลขที่คำสั่งซื้อ</p>
+              </div>
+              <div class="col-9">
+                <input class="form-control mb-4" type="text" pattern="\S+" maxlength="255" id="reportNumber"  name="reportNumber" placeholder="เลขที่คำสั่งซื้อ" required>
+              </div>
             </div>
-            <div class="col">
-            <input class="form-control mb-4" type="text" pattern="\S+" maxlength="255" id="reportNumber"  name="reportNumber" placeholder="เลขที่คำสั่งซื้อ" required>
-            <input class="form-control mb-4" type="file" id="file" name="file" accept="image/png, image/jpeg, image/jpg" required>
-            <input class="form-control" type="datetime-local" id="datetime" name="datetime" required>                    
+            <div class="row">
+              <div class="col-3">
+                <p class="mb-4">เพิ่มใบคำสั่งซื้อ</p>
+              </div>
+              <div class="col-9">
+                <input class="form-control mb-4" type="file" id="file" name="file" accept="image/png, image/jpeg, image/jpg" required>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-3">
+                <p class="mb-4">วันที่สั่งซื้อ</p>
+              </div>
+              <div class="col-9">
+              <input class="form-control" type="datetime-local" id="datetime" name="datetime" required>                    
+              </div>
             </div>
           </div>
         </div>
@@ -48,6 +62,10 @@ if($_SESSION['role'] !=0){
     </form>
     </div>
   </div>
+
+
+
+
 
   <div class="container-fluid">
     <div class="row flex-nowrap">
