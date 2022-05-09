@@ -68,7 +68,7 @@ if($_SESSION['role'] !=0){
                       <div class="text-center mb-2">
                         <b style="font-size : 20px">รายงานสรุปการสั่งซื้อสินค้า</b>
                       </div>
-                      <a type="button" id="addReport" class="btn btn-success mb-3"><i class="fa fa-envelope-open-o" aria-hidden="true"></i> เพิ่มใบคำสั่งซื้อ</a>
+                      <a type="button" id="addReport" class="btn btn-success mb-3"><i class="fa fa-file-text-o" aria-hidden="true"></i> เพิ่มใบคำสั่งซื้อ</a>
                       <table class="table table-hover border " id="showAllReports">
                         <thead>
                           <tr>
