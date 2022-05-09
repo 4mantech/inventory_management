@@ -67,7 +67,7 @@ require('query/checkLogin.php');
                           </select>
                         </div>
                       </div>
-                      <table class="table border" id="showAllProd">
+                      <table class="table table-hover border" id="showAllProd">
                         <thead>
                           <tr>
                             <th scope="col">#</th>

@@ -39,7 +39,7 @@ if($_SESSION['role'] !=0){
                         <b style="font-size : 20px">แสดงผู้ใช้งาน</b>
                       </div>
                       <a type="button" href="addUser.php" class="btn btn-success mb-3"><i class="fa fa-user-plus" aria-hidden="true"></i> เพิ่มผู้ใช้งาน</a>
-                      <table class="table border" id="showAllEmployees">
+                      <table class="table table-hover border" id="showAllEmployees">
                         <thead>
                           <tr>
                             <th scope="col">#</th>

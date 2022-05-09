@@ -24,11 +24,16 @@
           <li>
             <a href="manageStocks.php" class="nav-link px-0 align-middle text-white text-decoration-none">
               <i class="fa fa-shopping-cart" aria-hidden="true"></i><span class="ms-1 d-none d-sm-inline "> จัดการสต็อค</span></a>
-            </li>
+          </li>
+          <li>
+          <a href="showReports.php" class="nav-link px-0 align-middle text-white text-decoration-none">
+            <i class="fa fa-file-text-o" aria-hidden="true"></i> <span class="ms-1 d-none d-sm-inline ">รายงานการสั่งซื้อ</span></a>
+          </li>
           <li>
           <a href="manageUsers.php" class="nav-link px-0 align-middle text-white text-decoration-none">
             <i class="fa fa-user" aria-hidden="true"></i> <span class="ms-1 d-none d-sm-inline ">จัดการผู้ใช้งาน</span></a>
           </li>
+          
           
           <?php } ?>
         </ul>
