@@ -112,7 +112,7 @@ if($_SESSION['role'] !=0){
         <h5 class="modal-title" id="imageModalLabel">รูปภาพคำสั่งซื้อ</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body text-center">
       <img class="img-fluid" id="img">
       
       </div>
