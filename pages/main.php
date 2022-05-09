@@ -50,12 +50,12 @@ require('query/checkLogin.php');
                     <div class="col-1">
                     </div>
                     <div class="col-10">
-                      <div class="text-center mb-2">
+                      <div class="text-center mb-4">
                         <b style="font-size : 20px">แสดงสินค้าที่เหลือน้อย</b>
                       </div>
-                      <?php if ($_SESSION['role'] == 0) { ?>
+                      <!-- <?php if ($_SESSION['role'] == 0) { ?>
                         <a type="button" href="addProduct.php" class="btn btn-success mb-3"><i class="fa fa-cart-plus" aria-hidden="true"></i> เพิ่มสินค้า</a>
-                      <?php } ?>
+                      <?php } ?> -->
                       <div class="row mb-4">
                         <div class="col-4 text-end">
                           <h5 for="categoryId">ประเภทสินค้า : </h5>
