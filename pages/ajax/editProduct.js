@@ -67,14 +67,6 @@ const showOneProduct = (id) => {
 };
 
 const editProduct = (data) => {
-  console.log("hello");
-  let history = $("#history").val();
-  let goTo = "showProducts.php";
-
-  if (history == "less") {
-    goTo = "main.php";
-  }
-
   $.ajax({
     type: "POST",
     enctype: "multipart/form-data",
@@ -93,7 +85,7 @@ const editProduct = (data) => {
           theme: "light",
           useTransparency: true,
           onOk: () => {
-            window.location.href = goTo;
+            window.location.href = 'showProducts.php';
           },
         });
       } else {
@@ -109,11 +101,7 @@ const editProduct = (data) => {
     },
   });
 };
-const back = (history) => {
-  history == "less"
-    ? (window.location.href = "main.php")
-    : (window.location.href = "showProducts.php");
-};
+
 
 var forms = document.querySelectorAll(".needs-validation");
 Array.prototype.slice.call(forms).forEach(function (form) {

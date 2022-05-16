@@ -39,7 +39,6 @@ if($_SESSION['role'] !=0){
                 <div class="card-body">
                   <form enctype="multipart/form-data" class="needs-validation" id="addProductForm" novalidate>
                     <input type="hidden" name="productId" id="productId" value="<?php echo $_GET['id']; ?>">
-                    <input type="hidden" name="history" id="history" value="<?php echo $_GET['history']; ?>">
                     <div class="form-group row mt-2">
                       <div class="col-6">
                         <label for="previewcategory">ชื่อสินค้า</label>
