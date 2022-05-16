@@ -31,7 +31,7 @@ $(document).ready(function () {
             <td scope="col">${element.productName}</td>
             <td scope="col">${element.productQuantity}</td>
             <td class="text-center" scope="col"> 
-              <input type="number" class="form-control" min="1" value="1" ></input>
+              <input type="number" class="form-control" min="1" value="1" onKeyPress="if(this.value.length==6) return false;"></input>
             </td>
           </tr>   
           `);
@@ -39,7 +39,8 @@ $(document).ready(function () {
           $("#cutStockButton").prop("disabled", false);
           $("#addStockButton").prop("disabled", false);
         } else {
-
+          $("#cutStockButton").prop("disabled", true);
+          $("#addStockButton").prop("disabled", true);
         }
         $("#showStocks").DataTable();
         // let test = [];

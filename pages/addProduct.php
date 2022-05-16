@@ -84,7 +84,7 @@ if($_SESSION['role'] !=0){
                           </div>
                           <div class="col-4">
                             <label for="previewmodel">จำนวน</label>
-                            <input type="number" class="form-control" pattern="\S+" id="productQuantity" min="1" max="999999" name="productQuantity" onkeypress='return event.charCode >= 48 && event.charCode <= 57' required>
+                            <input type="number" class="form-control" id="productQuantity" min="1" max="999999" name="productQuantity" onKeyPress="if(this.value.length==6) return false;" required>
                             <div class="valid-feedback">
                             </div>
                             <div class="invalid-feedback">

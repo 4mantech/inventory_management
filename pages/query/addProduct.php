@@ -7,18 +7,15 @@ $size = $_POST['size'];
 $color = $_POST['color'];
 $productQuantity = $_POST['productQuantity'];
 
-$sqlCheck = "SELECT 
-  *
-FROM
-  products
-WHERE
-  productName = '$productName' AND
-  categoryId = '$categoryId' AND
-  size = '$size' AND
-  color = '$color'";
-$resultCheck = mysqli_query($conn, $sqlCheck);
+$productCheck = "SELECT 
+    productName
+  FROM
+    products 
+  WHERE
+    productName = '$productName'";
+$productNameCheck = mysqli_query($conn, $productCheck);
 
-if (mysqli_num_rows($resultCheck) <= 0) {
+if (mysqli_num_rows($productNameCheck) <= 0 ) {
   if (isset($_FILES['productImage']['name']) && $_FILES['productImage']['name'] != "") {
     $filename = $_FILES['productImage']['name'];
     $imageFileType = pathinfo($filename, PATHINFO_EXTENSION);
@@ -59,6 +56,6 @@ VALUES (
     echo json_encode(array("status" => "true"), JSON_UNESCAPED_UNICODE);
   }
 } else {
-  echo json_encode(array("status" => "false", "message" => "มีสินค้านี้แล้ว"), JSON_UNESCAPED_UNICODE);
+  echo json_encode(array("status" => "false", "message" => "มีสินค้าชื่อนี้แล้ว"), JSON_UNESCAPED_UNICODE);
 }
 mysqli_close($conn);
