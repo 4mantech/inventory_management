@@ -2,6 +2,7 @@ $(document).ready(function () {
   showUser($("#id").val());
   $("#pageName").text("จัดการบัญชีผู้ใช้");
 });
+
 $("#changePasswordForm").submit(function (e) {
   e.preventDefault();
   let data = new FormData(e.target);

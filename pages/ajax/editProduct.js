@@ -45,7 +45,7 @@ const showOneProduct = (id) => {
         $("#size").val(data.size);
         $("#color").val(data.color);
         $("#productQuantity").val(data.productQuantity);
-        $("#productDetail").val(data.productDetail);
+        // $("#productDetail").val(data.productDetail);
         $("#pimage").html(`
           <img 
             id="img"
