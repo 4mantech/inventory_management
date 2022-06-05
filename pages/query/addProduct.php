@@ -2,7 +2,6 @@
 require_once('connect.php');
 $categoryId = $_POST['categoryId'];
 $productName = $_POST['productName'];
-$productDetail = $_POST['productDetail'];
 $size = $_POST['size'];
 $color = $_POST['color'];
 $productQuantity = $_POST['productQuantity'];
@@ -37,7 +36,6 @@ if (mysqli_num_rows($productNameCheck) <= 0 ) {
   products (
       categoryId,
       productName,
-      productDetail,
       size,
       color,
       productImage,
@@ -46,7 +44,6 @@ if (mysqli_num_rows($productNameCheck) <= 0 ) {
 VALUES (
       '$categoryId',
       '$productName',
-      '$productDetail',
       '$size',
       '$color',
       '$newname',

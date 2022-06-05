@@ -7,7 +7,6 @@ $categoryId =  $_POST['categoryId'];
 $size = $_POST['size'];
 $color = $_POST['color'];
 $productQuantity = $_POST['productQuantity'];
-$productDetail=  $_POST['productDetail'];
 
 $checkProduct = "SELECT * FROM products WHERE id =  '$id'";
 $resultCheck = mysqli_query($conn,$checkProduct);
@@ -35,7 +34,6 @@ if (isset($_FILES['productImage']['name']) && $_FILES['productImage']['name'] !=
 SET
   `categoryId` = '$categoryId',
   `productName` = '$productName',
-  `productDetail` = '$productDetail',
   `size` = '$size',
   `color` = '$color',
   `productImage` = '$newname',
@@ -49,7 +47,6 @@ id = '$id'";
 SET
   `categoryId` = '$categoryId',
   `productName` = '$productName',
-  `productDetail` = '$productDetail',
   `size` = '$size',
   `color` = '$color',
   `productQuantity` = '$productQuantity'

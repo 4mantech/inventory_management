@@ -34,8 +34,8 @@
             <i class="fa fa-user" aria-hidden="true"></i> <span class="ms-1 d-none d-sm-inline ">จัดการผู้ใช้งาน</span></a>
           </li>
           
-          
           <?php } ?>
+          
         </ul>
         <hr class="venice">
         <div class="dropdown pb-4">
@@ -43,8 +43,10 @@
             <span class="d-none d-sm-inline mx-1"><?php echo $_SESSION['username']; ?></span>
           </a>
           <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+          <?php if($_SESSION['role'] == 0){ ?>
             <li><a class="dropdown-item" href="editUser.php?id=<?php echo $_SESSION['loginId']; ?>"><i class="fa fa-cog" aria-hidden="true"></i>จัดการบัญชี</a></li>
-          <hr>
+            <hr>
+            <?php } ?>
             <li><a class="dropdown-item" href="query/logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i> ออกจากระบบ</a></li>
           </ul>
         </div>

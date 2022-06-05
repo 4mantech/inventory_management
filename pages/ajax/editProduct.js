@@ -77,6 +77,7 @@ const editProduct = (data) => {
     cache: false,
     success: (response) => {
       const data = JSON.parse(response);
+      console.log(response)
       if (data.status == "true") {
         SoloAlert.alert({
           title: "สำเร็จ!!",
