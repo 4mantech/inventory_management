@@ -126,50 +126,53 @@ const showOneProduct = (id) => {
       <div class="col-6">
               <img src="../assets/images/products/${data.productImage}" id="productImg" style="height:500;width:100%;border-radius:5px;">
             </div>
-            <div class="col-4">
+            <div class="col-6">
               <div class="row">
-                <div class="col-6">
+                <div class="col-4">
                   <p>ชื่อสินค้า:</p>
                 </div>
-                <div class="col-6">
+                <div class="col-8">
                   <p>${data.productName}</p>
                 </div>
               </div>
               <div class="row">
-                <div class="col-6">
+                <div class="col-4">
                   <p>ประเภทของสินค้า:</p>
                 </div>
-                <div class="col-6">
+                <div class="col-8">
                   <p>${data.categoryName}</p>
                 </div>
               </div>
               <div class="row">
-                <div class="col-6">
+                <div class="col-4">
                   <p>สี:</p>
                 </div>
-                <div class="col-6">
+                <div class="col-8">
                   <p>${data.color}</p>
                 </div>
               </div>
               <div class="row">
-                <div class="col-6">
+                <div class="col-4">
                   <p>ขนาด:</p>
                 </div>
-                <div class="col-6">
+                <div class="col-8">
                   <p>${data.size}</p>
                 </div>
               </div>
               <div class="row">
-                <div class="col-6">
+                <div class="col-4">
                   <p>จำนวน:</p>
                 </div>
-                <div class="col-6">
+                <div class="col-8">
                   <p>${data.productQuantity}</p>
                 </div>
               </div>
               <div class="row">
-                <div class="col-12">
-                  <p style="color:red;">*** ราคาสินค้าอาจมีการเปลียนแปลงทุกเดือน ***</p>
+                <div class="col-4">
+                  <p>หมายเหตุ:</p>
+                </div>
+                <div class="col-8">
+                  <p>ราคาสินค้าอาจมีการเปลียนแปลงทุกเดือน</p>
                 </div>
               </div>
             </div>
