@@ -27,9 +27,8 @@ if (isset($_FILES['productImage']['name']) && $_FILES['productImage']['name'] !=
   $valid_extensions = array("jpg", "jpeg", "png");
 
   if (in_array(strtolower($imageFileType), $valid_extensions)) {
-    unlink($oldfile);
+    // unlink($oldfile);
     move_uploaded_file($_FILES['productImage']['tmp_name'], $location);
-
     $sql = "UPDATE
   `products`
 SET
