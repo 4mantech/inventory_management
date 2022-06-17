@@ -36,6 +36,7 @@ const addProduct = (data) => {
     cache: false,
     success: function (response) {
       const data = JSON.parse(response);
+      console.log(data)
       if (data.status == "true") {
         SoloAlert.alert({
           title: "สำเร็จ",

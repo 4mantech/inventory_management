@@ -93,7 +93,7 @@ if($_SESSION['role'] !=0){
                           </div>
 
                         </div>
-                        <div class="form-group row mt-2">
+                        <!-- <div class="form-group row mt-2">
                           <div class="col">
                             <label for="productdetail" class="form-label">รายละเอียดสินค้า (เพิ่มเติม)</label>
                             <textarea class="form-control" pattern="\S+" maxlength="255" id="productDetail" name="productDetail" required></textarea>
@@ -103,7 +103,7 @@ if($_SESSION['role'] !=0){
                               โปรดระบุรายละเอียดของสินค้า
                             </div>
                           </div>
-                        </div>
+                        </div> -->
                         <div class="form-group row mt-2">
                           <div class="col">
                             <label for="add-picture" class="form-label">เพิ่มรูปสินค้า
